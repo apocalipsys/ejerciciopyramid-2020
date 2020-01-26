@@ -1,0 +1,31 @@
+{% extends 'home.jinja2' %}
+
+{% block title %} {{name}} {% endblock title %}
+
+{% block content %}
+
+<p>
+<strong>
+    Login
+</strong><br></p>
+
+<form action="{{ url }}" method="post">
+<input type="hidden" name="next" value="{{ next_url }}">
+<div class="form-group">
+    <label for="login">Username</label>
+    <input type="text" class="form-control w-25" maxlength="40" required name="login" value="{{ login }}">
+</div>
+<div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control w-25" maxlength="40" required name="password">
+</div>
+<div class="form-group">
+    <button type="submit" name="form.submitted" value="Log In" class="btn btn-info">Log In</button>
+</div>
+</form>
+
+
+
+
+
+{% endblock content %}

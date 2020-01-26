@@ -1,0 +1,23 @@
+{% extends 'home.jinja2' %}
+
+{% block title %} {{name}} {% endblock title %}
+
+{% block content %}
+
+<h1>{{greeting}}</h1>
+<h2>{{request.user.name}}</h2>
+{% if request.user.name == 'admin' %}
+<h2>Users list</h2>
+{% for user in users %}
+{% if user.name != 'admin' %}
+<br>
+<ul class="list-group list-group-flush">
+  <li class="list-group-item list-group-item-light">Name: {{ user.name }} - Role: {{user.role}}</li>
+  <a class="list-group-item list-group-item-action" href="{{ request.route_url('delete_user', user=user.name) }}"> Borrar </a>
+</ul>
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endblock content %}
+
+
