@@ -39,6 +39,9 @@
       </file>
     </leaf>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -70,6 +73,7 @@
     <option name="width" value="940" />
     <option name="height" value="789" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -83,29 +87,6 @@
               <item name="ejerciciokenwin" type="b2602c69:ProjectViewProjectNode" />
               <item name="ejerciciokenwin" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ejerciciokenwin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ejerciciokenwin" type="462c0819:PsiDirectoryNode" />
-              <item name="ejerciciokenwin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ejerciciokenwin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ejerciciokenwin" type="462c0819:PsiDirectoryNode" />
-              <item name="ejerciciokenwin" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ejerciciokenwin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ejerciciokenwin" type="462c0819:PsiDirectoryNode" />
-              <item name="ejerciciokenwin" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ejerciciokenwin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ejerciciokenwin" type="462c0819:PsiDirectoryNode" />
-              <item name="ejerciciokenwin" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -113,6 +94,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/ejerciciokenwin/templates/backup" />
   </component>
   <component name="RecentsManager">
@@ -154,12 +136,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49822694" visible="true" weight="0.25527427" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49822694" visible="true" weight="0.25527427" />
       <window_info id="Structure" order="2" sideWeight="0.50177306" side_tool="true" weight="0.25527427" />
-      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.39158577" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" visible="true" weight="0.39243242" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="2" weight="0.32901832" />
       <window_info anchor="bottom" id="Message" order="3" />
