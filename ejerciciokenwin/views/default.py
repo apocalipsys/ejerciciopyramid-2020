@@ -192,7 +192,8 @@ class Views:
             next_url = self.request.route_url('home')
         # if no user no func/si no hay usuario no hay funcion
         # User validation/validacion de usuario
-        if self.out_or_stay(username=self.request.user.name): return HTTPFound(location='/error')
+        username = None if not self.request.user else self.request.user.name
+        if self.out_or_stay(username=username): return HTTPFound(location='/error')
 
         post_id =self.request.matchdict['post_id']
         post = self.db.query(BlogPosts).filter_by(id=post_id).one()
@@ -207,7 +208,6 @@ class Views:
         if not next_url:
             next_url = self.request.route_url('home')
         user = self.request.matchdict['user']
-
         # if no user no func/si no hay usuario no hay funcion
         # User validation/validacion de usuario
         if self.out_or_stay(username=user): return HTTPFound(location='/error')
