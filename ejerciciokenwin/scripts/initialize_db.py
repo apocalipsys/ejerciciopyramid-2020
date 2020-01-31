@@ -25,7 +25,7 @@ def setup_models(dbsession):
         s += 1
         users = models.User(name=names[s], password=names[s] , role=roles[s])
         dbsession.add(users)
-
+    #pass
 
 def parse_args(argv):
     parser = argparse.ArgumentParser()

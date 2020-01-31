@@ -4,20 +4,19 @@
 
 {% block content %}
 
+
 <h1>{{greeting}}</h1>
 <h2>{{request.user.name}}</h2>
-{% if request.user.name == 'admin' %}
-<h2>Users list</h2>
-{% for user in users %}
-{% if user.name != 'admin' %}
-<br>
-<ul class="list-group list-group-flush">
-  <li class="list-group-item list-group-item-light">Name: {{ user.name }} - Role: {{user.role}}</li>
-  <a class="list-group-item list-group-item-action" href="{{ request.route_url('delete_user', user=user.name) }}"> Borrar </a>
-</ul>
-{% endif %}
+<span><strong>User Posts:</strong></span>
+{% for post in posts %}
+<dl>
+    <dt>Title: {{post.title}} | Date: {{post.date}}</dt>
+        <dd>{{post.text}}</dd>
+</dl>
+<a class="btn btn-primary" href="{{request.route_url('delete_post', post_id=post.id)}}" role="button">Delete</a>
+<a class="btn btn-primary" href="{{request.route_url('edit_post', user=request.user.name, post_id=post.id)}}" role="button">Edit</a>
+<hr>
 {% endfor %}
-{% endif %}
-{% endblock content %}
 
+{% endblock content %}
 

@@ -17,7 +17,28 @@
         <div class="row">
           <div class="col-md-10">
           <div class="content">
-            <span class="d-block p-2 bg-dark text-white"><strong>Repository Exercise</strong></span>
+
+            <span class="d-block p-2 bg-dark text-white"><strong>Portal de Usuarios</strong>
+              {% if request.user is none %}
+                        <a class="text-light" href="{{ request.route_url('login') }}">Login</a>
+              {% else %}
+                  User: <span class="name"> <strong>{{ request.user.name }}</strong></span>
+              {% if request.user.role !='admin' %}
+              <span class="btn-group">
+                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Users
+                </button>
+                <span class="dropdown-menu">
+                {% for u in users_posts %}
+                   <a class="text-light" href="{{request.route_url('posts_by_user', user=u.name)}}">{{u.name}} posts</a><br>
+                {% endfor %}
+                </span>
+                {% endif %}
+              </span>
+
+
+              {% endif %}
+            </span>
             {% if request.user is none %}
             <p class="pull-right">
             <a id="login" class="badge badge-light" href="{{ request.route_url('login') }}">Login</a>
@@ -25,8 +46,10 @@
             </p><br>
             {% else %}
             <p class="pull-right">
-            <a class="text-light" href="{{request.route_url('welcome')}}">Enter in</a>
-            {{request.user.name}} or <a id="logout" class="badge badge-dark" href="{{request.route_url('logout')}}">Logout</a>
+            <a class="text-light" href="{{request.route_url('welcome')}}">Home</a>
+            <a class="text-light" href="{{request.route_url('profile', user=request.user.name)}}">Profile</a>
+            <a class="text-light" href="{{request.route_url('posts', user=request.user.name)}}">New post</a>
+            <a id="logout" class="badge badge-dark" href="{{request.route_url('logout')}}">Logout</a>
             </p>
             {% endif %}
             {% for m in request.session.pop_flash() %}
@@ -37,6 +60,7 @@
               </button>
             </div>
             {% endfor %}
+
             {% block content %}
 
             {% endblock content %}

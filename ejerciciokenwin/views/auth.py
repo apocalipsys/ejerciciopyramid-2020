@@ -27,6 +27,7 @@ def login(request):
     # Validacion del formulario
     if 'form.submitted' in request.params:
         login = request.params['login']
+        #caca = request.params['soree']
         password = request.params['password']
         user = request.dbsession.query(User).filter_by(name=login).first()
         # User Validate

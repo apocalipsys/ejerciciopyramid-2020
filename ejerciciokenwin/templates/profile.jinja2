@@ -1,0 +1,26 @@
+{% extends 'home.jinja2' %}
+
+{% block title %} {{name}} {% endblock title %}
+{% block content %}
+
+<h1>This is your profile</h1>
+<h2>{{request.user.name}}</h2>
+
+<dl>
+    <dt>User name: {{user.name}}</dt>
+    <dt>User role: {{user.role}}</dt>
+</dl>
+<div>
+    <span class="d-block p-2 bg-dark text-white"><strong>Profile Image</strong>
+        <img src="data:;base64,{{ img }}" class="img-fluid" alt=""/>
+    </span>
+</div>
+<form action="{{ url }}" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+<input type="hidden" name="next" value="{{ next_url }}">
+<div class="custom-file">
+  <input type="file" class="custom-file-input" name="image" required>
+  <label class="custom-file-label" for="image"></label>
+    <button type="submit" name="form.submitted" value="Change image" class="btn btn-info">Change image</button>
+</div>
+</form>
+{% endblock content %}

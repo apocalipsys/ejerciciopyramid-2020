@@ -1,0 +1,33 @@
+{% extends 'home.jinja2' %}
+
+{% block title %} {{name}} {% endblock title %}
+{% block content %}
+
+<h1>Post a posta Post</h1>
+<h2>{{request.user.name}}</h2>
+
+
+<!--
+<div>
+    <span> Profile Image</span>
+
+    <img src="data:;base64,{{ img }}"/>
+</div>
+-->
+
+
+<form action="{{ url }}" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+<input type="hidden" name="next" value="{{ next_url }}">
+<div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" class="form-control" id="title" name="post_title" placeholder="Put the title here">
+</div>
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Comment</span>
+  </div>
+  <textarea class="form-control" aria-label="With textarea" name="post_text"></textarea>
+  <button type="submit" name="form.submitted" value="Change image" class="btn btn-info">Post!</button>
+</div>
+</form>
+{% endblock content %}

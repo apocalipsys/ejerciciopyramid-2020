@@ -3,6 +3,9 @@
 
 from pyramid.config import Configurator
 from pyramid.session import SignedCookieSessionFactory
+import os
+
+static_dir = os.path.abspath(os.path.dirname(__file__))
 
 
 def main(global_config, **settings):
@@ -15,4 +18,5 @@ def main(global_config, **settings):
         config.include('.security')
         config.include('.routes')
         config.scan('.views')
+
     return config.make_wsgi_app()

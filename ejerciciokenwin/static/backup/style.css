@@ -21,19 +21,3 @@ body {
 #register{
      font-size: 15px;
 }
-.name{
-    text-align-last: end;
-    text-shadow: 2px 2px #7f8280;
-}
-
-.card-body{
-    background-color: #000000;
-}
-
-.dropdown-menu{
-    background-color: #000000;
-}
-
-hr {
-  border: 1px solid white;
-}
