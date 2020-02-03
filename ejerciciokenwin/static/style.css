@@ -37,3 +37,19 @@ body {
 hr {
   border: 1px solid white;
 }
+
+.custom-range{
+    text-align-last: end;
+    text-shadow: 2px 2px #7f8280;
+}
+
+.blinking{
+    animation:blinkingText 1.5s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #9b00de;  }
+    49%{    color: #2500de; }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: #007acc;    }
+}

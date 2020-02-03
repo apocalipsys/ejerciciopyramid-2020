@@ -1,0 +1,27 @@
+{% extends 'home.jinja2' %}
+
+{% block title %} {{name}} {% endblock title %}
+
+{% block content %}
+
+<h1>Assign a task</h1>
+<h2></h2>
+
+<form class="form-inline" action="{{ url }}" method="post">
+<input type="hidden" name="next" value="{{ next_url }}">
+<label for="username" class="my-1 mr-2">User</label>
+  <select name="user_name" id="username" class="custom-select my-1 mr-sm-2">
+    <option selected>Choose...</option>
+      {% for u in users %}
+    <option value="{{u.name}}">Name: {{ u.name }} role: {{ u.role }}</option>
+    {% endfor %}
+  </select>
+<div class="form-group">
+    <label for="exampleFormControlTextarea1">Task</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="task_text"></textarea>
+  </div>
+  <button type="submit" name="form.submitted"  value="Tasks" class="btn btn-primary my-1">Submit</button>
+</form>
+{% endblock content %}
+
+

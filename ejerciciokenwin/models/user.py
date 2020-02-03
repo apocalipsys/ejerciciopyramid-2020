@@ -1,7 +1,7 @@
 #This file is for the users db structure, password hashing and user exists check
 #Este archivo es para que Sqlalchemy le de estructura a la base de datos de usuarios, para hashear los
 #passwords y para validar si el usuario que queres registrar existe o no.
-from sqlalchemy import Column, Integer, Text, LargeBinary, ForeignKey, DateTime
+from sqlalchemy import Column, Integer, Text, LargeBinary, ForeignKey, DateTime, Boolean
 from .meta import Base
 from werkzeug.security import generate_password_hash,check_password_hash
 from sqlalchemy.orm import relationship
@@ -15,6 +15,7 @@ class User(Base):
     password_hash = Column(Text)
     image = Column(LargeBinary)
     posts = relationship('BlogPosts', backref = 'author',lazy=True)
+    score = relationship('Score', backref= 'scores', lazy=True)
 
     def __init__(self, name, password, role):
         self.name = name
@@ -49,3 +50,40 @@ class BlogPosts(Base):
 
     def __repr__(self):
         return f'Post id {self.id} -- Fecha: {self.date} -- Titulo: {self.title}'
+
+
+class Score(Base):
+    __tablename__ = 'score'
+    users = relationship(User)
+
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
+    date = Column(DateTime, nullable=False, default=datetime.utcnow)
+    score = Column(Integer, default=0, nullable=False)
+
+    def __init__(self, score, user_id):
+        self.score = score
+        self.user_id = user_id
+
+   # def __repr__(self):
+    #    return f'The score of {self.user_id.score.name} -- Date: {self.date} -- : {self.score}'
+
+class Tasks(Base):
+    __tablename__ = 'tasks'
+
+    users = relationship(User)
+
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
+    date = Column(DateTime, nullable=False, default=datetime.utcnow)
+    time_working = Column(Text)
+    task = Column(Text, nullable=False)
+    done = Column(Boolean,nullable=False)
+    finish = Column(DateTime, default=datetime.utcnow)
+
+    def __init__(self, task, user_id, done):
+        self.time_working = datetime.utcnow()
+        self.task = task
+        self.user_id = user_id
+        self.done = done
+

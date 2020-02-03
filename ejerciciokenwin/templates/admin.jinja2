@@ -18,7 +18,12 @@
     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body">
       <h2>Users list</h2>
+        {% set d = [] %}
+        {% set u = [] %}
       {% for user in users %}
+                {% set d = [] %}
+                {% set u = [] %}
+
       {% if user.name != 'admin' %}
       <br>
       <ul class="list-group list-group-flush">
@@ -26,6 +31,32 @@
         <a class="list-group-item list-group-item-action" href="{{ request.route_url('delete_user', user=user.name) }}"> Delete </a>
         <a class="list-group-item list-group-item-action" href="{{ request.route_url('edit_user', user=user.name) }}"> Edit role </a>
         <a class="list-group-item list-group-item-action" href="{{request.route_url('posts_by_user', user=user.name)}}"> Posts</a><br>
+
+          {% for task in tasks %}
+          {% if task.user_id == user.id %}
+          {% if task.done == False %}
+          {% if u.append(u|count+1) %}{% endif %}
+
+          {% endif %}
+
+          {% if task.done == True %}
+          {% if d.append(d|count+1) %}{% endif %}
+
+          {% endif %}
+
+
+          {% endif %}
+
+          {% endfor %}
+          <a class="list-group-item list-group-item-action" href="{{request.route_url('tasks_by_user', user=user.name)}}">
+            Incomplete Tasks: <strong style="color:red;">{{u|last}}</strong>
+            Completed Tasks <strong style="color:green;">{{d|last}}</strong></a><br>
+          <a class="list-group-item list-group-item-action" href="{{request.route_url('tasks')}}">
+            Assign a task
+          </a>
+
+
+
 
       </ul>
       {% endif %}

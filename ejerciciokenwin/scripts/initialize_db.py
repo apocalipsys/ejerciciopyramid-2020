@@ -15,17 +15,17 @@ def setup_models(dbsession):
     # by using 'initialize_ejerciciokenwin_db  development.ini' command, you must to comment the two lines below.
     # Si te logueaste como admin, y despues borraste todos los usuarios y luego queres agregarlos denuevo
     # usando el comando 'initialize_ejerciciokenwin_db  development.ini' tenes que comentar las dos lineas que siguen.
-    admin = models.User(name='admin', password='admin', role='admin')
-    dbsession.add(admin)
+    #admin = models.User(name='admin', password='admin', role='admin')
+    #dbsession.add(admin)
 
-    s = -1
-    roles = ['guest','developer','salesman','company','customer']
-    names = ['homer', 'bart', 'lisa', 'marge', 'maggie']
-    for _ in range(5):
-        s += 1
-        users = models.User(name=names[s], password=names[s] , role=roles[s])
-        dbsession.add(users)
-    #pass
+    #s = -1
+    #roles = ['guest','developer','salesman','company','customer']
+    #names = ['homer', 'bart', 'lisa', 'marge', 'maggie']
+    #for _ in range(5):
+    #    s += 1
+    #    users = models.User(name=names[s], password=names[s] , role=roles[s])
+    #    dbsession.add(users)
+    pass
 
 def parse_args(argv):
     parser = argparse.ArgumentParser()

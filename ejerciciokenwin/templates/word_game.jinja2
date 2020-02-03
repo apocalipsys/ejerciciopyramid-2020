@@ -1,0 +1,32 @@
+{% extends 'home.jinja2' %}
+
+{% block title %} {{name}} {% endblock title %}
+{% block content %}
+
+<h1>Select a letter or try!</h1>
+<h2>{{request.user.name}}</h2>
+
+
+<!--
+<div>
+    <span> Profile Image</span>
+
+    <img src="data:;base64,{{ img }}"/>
+</div>
+-->
+<h2>The word has {{ len_word }} letters</h2>
+{% for letter in letters %}
+{{ letter }}
+{% endfor %}
+<form action="{{ url }}" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+    <div class="form-group">
+
+<input type="hidden" name="next" value="{{ next_url }}">
+    <label for="customRange3">Select a letter</label>
+    <input type="text" class="custom-range" min="0" max="10" step="1" id="customRange3" name="selected_letter" oninput="output_value.value = customRange3.value">
+    <button type="submit" name="form.submitted" value="Number selection" class="btn btn-info">Join</button>
+            <output id="output_value">SLIDE FOR SELECT</output>
+
+    </div>
+</form>
+{% endblock content %}

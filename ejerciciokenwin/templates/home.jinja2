@@ -28,12 +28,28 @@
                 <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Users
                 </button>
+                {% for score in request.user.score %}
+                  score: {{ score.score }}
+                {% endfor %}
                 <span class="dropdown-menu">
-                {% for u in users_posts %}
+                {% for u in request.all_users %}
                    <a class="text-light" href="{{request.route_url('posts_by_user', user=u.name)}}">{{u.name}} posts</a><br>
                 {% endfor %}
                 </span>
                 {% endif %}
+                {% set d = [0] %}
+                {% set u = [0] %}
+                {% for task in request.tasks %}
+                {% if task.done == True %}
+                {% if d.append(d|count) %}{% endif %}
+                {% endif %}
+                {% if task.done == False %}
+                {% if u.append(u|count) %}{% endif %}
+                {% endif %}
+
+                {% endfor %}
+                Incomplete Tasks: <strong style="color:red;"> {{u|last}} </strong>
+                Completed Tasks: <strong style="color:white;"> {{d|last}} </strong>
               </span>
 
 
@@ -46,9 +62,12 @@
             </p><br>
             {% else %}
             <p class="pull-right">
-            <a class="text-light" href="{{request.route_url('welcome')}}">Home</a>
-            <a class="text-light" href="{{request.route_url('profile', user=request.user.name)}}">Profile</a>
-            <a class="text-light" href="{{request.route_url('posts', user=request.user.name)}}">New post</a>
+            |<a class="text-light" href="{{request.route_url('welcome')}}"> Home </a>|
+            |<a class="text-light" href="{{request.route_url('profile', user=request.user.name)}}"> Profile </a>|
+            |<a class="text-light" href="{{request.route_url('posts', user=request.user.name)}}"> New post </a>|
+            |<a class="text-light" href="{{request.route_url('number_game', user=request.user.name)}}"> Number Game </a>|
+            |<a class="text-light" href="{{request.route_url('word_game', user=request.user.name)}}"> Misterious word game </a>|
+            |<a class="text-light" href="{{request.route_url('tasks_by_user', user=request.user.name)}}"> My tasks </a>|
             <a id="logout" class="badge badge-dark" href="{{request.route_url('logout')}}">Logout</a>
             </p>
             {% endif %}
