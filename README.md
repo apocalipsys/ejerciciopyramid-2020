@@ -12,7 +12,7 @@ Todos los roles pueden ver los posts de todos.
 
 **CARACTERISTICAS NUEVAS 03/02/2020***
 - El administrador puede asignar tareas medidas por tiempo a los usuarios
-- Los usuarios pueden iniciarlas y finalizarlas.
+- Los usuarios pueden iniciarlas, pausarlas y finalizarlas.
 - Existe un intervalo del tiempo trabajado que se va acumulando a medida se vaya activando y reanudando la tarea.
 - Se muestran las tareas hechas y las que no estan hechas en pantalla y por usuario.
 - Lista de usuarios de acceso rapido

@@ -50,7 +50,7 @@ class Task:
         # Role validation/validacion de rol
         if self.out_or_stay(username=username): return HTTPFound(location='/error')
 
-        next_url = self.request.route_url('welcome')
+        next_url = self.request.route_url('tasks_by_user', user=username)
 
         if not next_url:
             next_url = self.request.route_url('home')
@@ -92,8 +92,38 @@ class Task:
             self.request.session.flash(f"You ACTIVE let's do it!", queue='', allow_duplicate=True)
             return HTTPFound(location=next_url)
 
+        if 'pause' in self.request.params:
+            task_id = self.request.params['pause']
+            actived_at = ''
+            sub_time = ''
+            print(f'Task id finished: {task_id}')
+            date = datetime.utcnow()
+            date_query = self.db.query(Tasks).filter_by(id=task_id).all()
+
+            #########################################
+            # This horrible way of manage intervals of
+            # time is a "temporary" solution. str to datetime,
+            # datetime to timedelta for operate in the
+            # subtraction and then convert ir to str
+            # to store in the database.
+            for c in date_query:
+                actived_at = c.active_date
+                sub_time = c.time_working
+            time_working = date - actived_at
+            sub_time = datetime.strptime(sub_time, '%H:%M:%S.%f').time()
+            sub_time = datetime.combine(date.min, sub_time) - datetime.min
+            time_working += sub_time
+            time_working = str(time_working)
+            ##########################################
+
+            print(f'Task id non active and not finished(paused): {task_id}')
+            self.db.query(Tasks).filter_by(id=task_id).update({Tasks.done: False, Tasks.active: False, Tasks.time_working: time_working}, synchronize_session=False)
+            self.request.session.flash(f'You Puased  the task ', queue='', allow_duplicate=True)
+            return  HTTPFound(location=next_url)
+
+
         #QUE GENIALIDAD ESTO:
-        tasks = self.db.query(Tasks).order_by(Tasks.date).filter_by(user_id=user.id).all()
+        tasks = self.db.query(Tasks).order_by(Tasks.date.desc()).filter_by(user_id=user.id).all()
 
 
         return {'name': 'Tasks by user', 'user':user, 'next_url': next_url,
