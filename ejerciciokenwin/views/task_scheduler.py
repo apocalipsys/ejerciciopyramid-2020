@@ -1,7 +1,7 @@
 from pyramid.httpexceptions import HTTPFound
 from pyramid.view import view_config, view_defaults
 from ..models import User, Tasks
-from datetime import datetime
+from datetime import datetime, date, time, timedelta
 from ..security import get_user
 
 #Task class/ Clase Task
@@ -30,7 +30,7 @@ class Task:
             user_name = self.request.params['user_name']
             task_text = self.request.params['task_text']
             user = self.db.query(User).filter_by(name=user_name).first()
-            task = Tasks(task=task_text,user_id=user.id,done=False)
+            task = Tasks(task=task_text,user_id=user.id,done=False, active=False)
             self.db.add(task)
             self.request.session.flash(f'You give a task to {user.name} ', queue='', allow_duplicate=True)
             return HTTPFound(location=next_url)
@@ -58,40 +58,41 @@ class Task:
         # Form validate
         # Validacion del formulario
         if 'finish' in self.request.params:
-            created_at = ''
+            actived_at = ''
             sub_time = ''
             task_id = self.request.params['finish']
             print(f'Task id finished: {task_id}')
             date = datetime.utcnow()
             date_query = self.db.query(Tasks).filter_by(id=task_id).all()
 
-            #####este bardo fue solo una prueba####
+            #########################################
+            # This horrible way of manage intervals of
+            # time is a "temporary" solution. str to datetime,
+            # datetime to timedelta for operate in the
+            # subtraction and then convert ir to str
+            # to store in the database.
             for c in date_query:
-                created_at = c.date
+                actived_at = c.active_date
                 sub_time = c.time_working
-                print(c.time_working)
-                print(type(created_at))
-            print(sub_time)
-            time_working  = date - created_at
-            print(time_working)
-            print(type(time_working))
-            #time_working +=sub_time
+            time_working  = date - actived_at
+            sub_time = datetime.strptime(sub_time, '%H:%M:%S.%f').time()
+            sub_time = datetime.combine(date.min, sub_time) - datetime.min
+            time_working += sub_time
+            time_working = str(time_working)
             ##########################################
 
-            time_working = str(time_working)
-            print(time_working)
-
-            self.db.query(Tasks).filter_by(id=task_id).update({Tasks.done: True, Tasks.finish: date, Tasks.time_working: time_working}, synchronize_session=False)
+            self.db.query(Tasks).filter_by(id=task_id).update({Tasks.done: True, Tasks.finish: date, Tasks.time_working: time_working, Tasks.active: False}, synchronize_session=False)
             self.request.session.flash(f'You Finished a task $$$ ;) ', queue='', allow_duplicate=True)
             return HTTPFound(location=next_url)
         if 'active' in self.request.params:
             task_id = self.request.params['active']
             print(f'Task id active and not finished: {task_id}')
             date = datetime.utcnow()
-            self.db.query(Tasks).filter_by(id=task_id).update({Tasks.done: False, Tasks.date: date}, synchronize_session=False)
+            self.db.query(Tasks).filter_by(id=task_id).update({Tasks.done: False, Tasks.active: True, Tasks.active_date: date}, synchronize_session=False)
             self.request.session.flash(f"You ACTIVE let's do it!", queue='', allow_duplicate=True)
             return HTTPFound(location=next_url)
 
+        #QUE GENIALIDAD ESTO:
         tasks = self.db.query(Tasks).order_by(Tasks.date).filter_by(user_id=user.id).all()
 
 

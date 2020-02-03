@@ -79,11 +79,14 @@ class Tasks(Base):
     time_working = Column(Text)
     task = Column(Text, nullable=False)
     done = Column(Boolean,nullable=False)
-    finish = Column(DateTime, default=datetime.utcnow)
+    active = Column(Boolean)
+    finish = Column(DateTime)
+    active_date = Column(DateTime)
 
-    def __init__(self, task, user_id, done):
-        self.time_working = datetime.utcnow()
+    def __init__(self, task, user_id, done, active):
+        self.time_working = '0:00:00.000000'
         self.task = task
         self.user_id = user_id
         self.done = done
+        self.active = active
 

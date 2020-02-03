@@ -10,19 +10,25 @@
 <input type="hidden" name="next" value="{{ next_url }}">
         <div>
         {% for task in user_tasks %}
-        Task created: {{task.date}}
-        Task: {{task.task}}
-            {{task.done}}
+        Task created: {{ task.date }}<br>Actived at: {{ task.active_date }} <br>Finished at: {{ task.finish }} <br>Total Working Time: {{ task.time_working }}<br>
+        Task: {{ task.task }}
         <div class="custom-control custom-switch">
-          {% if task.done == False %}
+          {% if task.done == False and task.active == True %}
           <input type="checkbox" class="custom-control-input" id="donetask" checked disabled>
             <label class="custom-control-label" for="donetask">TASK STATE: <strong class="blinking">| ACTIVE |</strong></label>
             <div>
           <button type="submit" name="finish" value="{{ task.id }}" class="btn btn-primary my-1">FINISH TASK</button>
             </div>
-          {% else %}
+          {% endif %}
+          {% if task.active == False %}
           <input type="checkbox" class="custom-control-input" id="undonetask" disabled>
-            <label class="custom-control-label" for="undonetask">TASK STATE: <strong style="color:green;">| TASK COMPLETED |</strong></label>
+            <label class="custom-control-label" for="undonetask">TASK STATE:
+                {% if task.done == True %}
+                <strong style="color:green;">| TASK COMPLETED |</strong>
+                {% else %}
+                <strong style="color:red;">| TASK INCOMPLETED |</strong>
+                {% endif %}
+            </label>
             <div>
           <button type="submit" name="active" value="{{ task.id }}" class="btn btn-primary my-1">ACTIVE!</button>
             </div>

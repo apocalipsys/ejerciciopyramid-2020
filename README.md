@@ -2,13 +2,23 @@ Log users/admin Pyramid webApp
 =========
 Users/passwords: admin/admin, homer/homer, bart/bart, marge/marge, lisa/lisa, maggie/maggie
 
-Web app hecha con python y el framework pyramid:
-El usuario con rol "admin" se puede loguear, cambiar de rol a los demas usuarios y borrarlos. Postear, borrar sus posts, borrar posts de usuarios. Tambien puede cambiar su foto de perfil.
+**Web app hecha con python y el framework pyramid**
 
-Los demas roles pueden: loguarse, postear, editar sus propios posts, borrar sus propios posts y cambiar su foto de perfil.
+- El usuario con rol "admin" se puede loguear, cambiar de rol a los demas usuarios y borrarlos. Postear, borrar sus posts, borrar posts de usuarios. Tambien puede cambiar su foto de perfil.
+
+- Los demas roles pueden: loguarse, postear, editar sus propios posts, borrar sus propios posts y cambiar su foto de perfil.
 Los usuarios nuevos se pueden registrar como rol de invitado "guest" y pueden hacer lo mismo que los demas roles excepto lo que puede hacer el admin.
-
 Todos los roles pueden ver los posts de todos.
+
+**CARACTERISTICAS NUEVAS 03/02/2020***
+- El administrador puede asignar tareas medidas por tiempo a los usuarios
+- Los usuarios pueden iniciarlas y finalizarlas.
+- Existe un intervalo del tiempo trabajado que se va acumulando a medida se vaya activando y reanudando la tarea.
+- Se muestran las tareas hechas y las que no estan hechas en pantalla y por usuario.
+- Lista de usuarios de acceso rapido
+- Dos juegos asi como para molestar, un ahorcado muy sencillo y adivinar un numero ultra sencillo.
+- Los juegos suman puntaje al usuario.
+
 
 ***author: Martin Vargas***
 
@@ -82,11 +92,11 @@ CREATE DATABASE nombre_db WITH OWNER nombre_usuario;
 ~~~    
 - Actualizar packaging tools.
 ~~~
-    env/bin/pip install --upgrade pip setuptools
+    pip install --upgrade pip setuptools
 ~~~
 - Instalar el proyecto en modo editable con esto se puede testear los requerimientos y dependencias antes de instalarlos
 ~~~
-    env/bin/pip install -e ".[testing]"
+    pip install -e ".[testing]"
 ~~~ 
 - VERIFICAR SI EDITASTE el archivo development.ini
 
@@ -101,21 +111,26 @@ CREATE DATABASE nombre_db WITH OWNER nombre_usuario;
     
 Inicializar y actualizar la base de datos usando Alembic.
 ---
+- Primero esto:
+~~~
+    alembic -c development.ini stamp heads
+~~~
+
 - Generar la primera revision.
 ~~~
-        env/bin/alembic -c development.ini revision --autogenerate -m "init"
+     alembic -c development.ini revision --autogenerate -m "init"
 ~~~
 - Actualizar esa primera revision.
 ~~~
-        env/bin/alembic -c development.ini upgrade head
+     alembic -c development.ini upgrade head
 ~~~
 - Abrir los datos por defecto dentro de la base de datos usando el siguiente script.(se crean varios usuarios y sus            contraseñas son igual a sus nombres(user and pass) admin:admin, homer:homer, bart:bart, lisa:lisa, maggie:maggie y marge:marge
 ~~~
-    env/bin/initialize_ejerciciokenwin_db development.ini
+    initialize_ejerciciokenwin_db development.ini
 ~~~
 - Para ejecutar el proyecto se activa el servidor.
 ~~~
-    env/bin/pserve development.ini
+    pserve development.ini
 ~~~
 - Si necesitas cambiar el puerto lo podes hacer desde el archivo development.ini
 --------
@@ -154,15 +169,15 @@ CREATE DATABASE nombre_db WITH OWNER nombre_usuario;
 ~~~
 - Activate the virtual environment:
 ~~~
-    source venv/bin/activate
+   source venv/bin/activate
 ~~~ 
 - Upgrade packaging tools.
 ~~~
-    env/bin/pip install --upgrade pip setuptools
+   pip install --upgrade pip setuptools
 ~~~
 - Install the project in editable mode with its testing requirements.
 ~~~
-    env/bin/pip install -e ".[testing]"
+   pip install -e ".[testing]"
 ~~~    
 - VERIFY IF YOU EDIT development.ini
 ~~~    
@@ -177,21 +192,26 @@ CREATE DATABASE nombre_db WITH OWNER nombre_usuario;
 
 Initialize and upgrade the database using Alembic.
 ---
+- run this before:
+~~~
+    alembic -c development.ini stamp heads
+~~~
+
 - Generate your first revision.
 ~~~
-        env/bin/alembic -c development.ini revision --autogenerate -m "init"
+    alembic -c development.ini revision --autogenerate -m "init"
 ~~~
 - Upgrade to that revision.
 ~~~
-        env/bin/alembic -c development.ini upgrade head
+    alembic -c development.ini upgrade head
 ~~~
 
 - Load default data into the database using a script.
 ~~~
-    env/bin/initialize_ejerciciokenwin_db development.ini
+   initialize_ejerciciokenwin_db development.ini
 ~~~
 
 - Run your project.
 ~~~
-    env/bin/pserve development.ini
+    pserve development.ini
 ~~~
