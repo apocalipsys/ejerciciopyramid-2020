@@ -2,35 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5cdbd69-e3be-4a5f-ab47-b93493bd970b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ejerciciokenwin/static/admin.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ejerciciokenwin/static/assign-task.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ejerciciokenwin/static/edit-post.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ejerciciokenwin/static/goodafternoon.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ejerciciokenwin/static/goodmorning.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ejerciciokenwin/static/goodnight.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ejerciciokenwin/static/number-game.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ejerciciokenwin/static/post-a-post.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ejerciciokenwin/static/profile.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ejerciciokenwin/static/tasks-by-user.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ejerciciokenwin/static/word-game.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ejerciciokenwin/templates/backup/welcome.jinja2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/development.ini" beforeDir="false" afterPath="$PROJECT_DIR$/development.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejerciciokenwin/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/ejerciciokenwin/static/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejerciciokenwin/templates/admin.jinja2" beforeDir="false" afterPath="$PROJECT_DIR$/ejerciciokenwin/templates/admin.jinja2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejerciciokenwin/templates/edit.jinja2" beforeDir="false" afterPath="$PROJECT_DIR$/ejerciciokenwin/templates/edit.jinja2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejerciciokenwin/templates/edit_post.jinja2" beforeDir="false" afterPath="$PROJECT_DIR$/ejerciciokenwin/templates/edit_post.jinja2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejerciciokenwin/templates/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/ejerciciokenwin/templates/backup/game.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejerciciokenwin/templates/game.jinja2" beforeDir="false" afterPath="$PROJECT_DIR$/ejerciciokenwin/templates/backup/game.jinja2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejerciciokenwin/templates/home.jinja2" beforeDir="false" afterPath="$PROJECT_DIR$/ejerciciokenwin/templates/home.jinja2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejerciciokenwin/templates/number_game.jinja2" beforeDir="false" afterPath="$PROJECT_DIR$/ejerciciokenwin/templates/number_game.jinja2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejerciciokenwin/templates/posts.jinja2" beforeDir="false" afterPath="$PROJECT_DIR$/ejerciciokenwin/templates/posts.jinja2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejerciciokenwin/templates/posts_by_user.jinja2" beforeDir="false" afterPath="$PROJECT_DIR$/ejerciciokenwin/templates/posts_by_user.jinja2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejerciciokenwin/templates/profile.jinja2" beforeDir="false" afterPath="$PROJECT_DIR$/ejerciciokenwin/templates/profile.jinja2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejerciciokenwin/templates/tasks.jinja2" beforeDir="false" afterPath="$PROJECT_DIR$/ejerciciokenwin/templates/tasks.jinja2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejerciciokenwin/templates/tasks_by_user.jinja2" beforeDir="false" afterPath="$PROJECT_DIR$/ejerciciokenwin/templates/tasks_by_user.jinja2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejerciciokenwin/templates/welcome.jinja2" beforeDir="false" afterPath="$PROJECT_DIR$/ejerciciokenwin/templates/welcome.jinja2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejerciciokenwin/templates/word_game.jinja2" beforeDir="false" afterPath="$PROJECT_DIR$/ejerciciokenwin/templates/word_game.jinja2" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,32 +31,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ejerciciokenwin/templates/tasks_by_user.jinja2">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
-              <folding>
-                <element signature="n#style#0;n#strong#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#strong#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ejerciciokenwin/templates/word_game.jinja2">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="80">
               <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ejerciciokenwin/templates/posts.jinja2">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -98,11 +48,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ejerciciokenwin/static/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="506">
               <caret line="139" column="43" lean-forward="true" selection-start-line="139" selection-start-column="43" selection-end-line="139" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/production.ini">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/development.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="16" column="170" selection-start-line="16" selection-start-column="170" selection-end-line="16" selection-end-column="170" />
             </state>
           </provider>
         </entry>
@@ -193,7 +157,6 @@
         <option value="$PROJECT_DIR$/ejerciciokenwin/views/game.py" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/views/auth.py" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/views/default.py" />
-        <option value="$PROJECT_DIR$/development.ini" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/templates/welcome.jinja2" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/templates/home.jinja2" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/templates/game.html" />
@@ -208,10 +171,11 @@
         <option value="$PROJECT_DIR$/ejerciciokenwin/templates/posts_by_user.jinja2" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/templates/admin.jinja2" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/static/style.css" />
+        <option value="$PROJECT_DIR$/development.ini" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="4">
     <option name="x" value="960" />
     <option name="y" value="25" />
     <option name="width" value="960" />
@@ -266,8 +230,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/ejerciciokenwin/templates/backup" />
       <recent name="$PROJECT_DIR$/ejerciciokenwin/static" />
+      <recent name="$PROJECT_DIR$/ejerciciokenwin/templates/backup" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/ejerciciokenwin/static/backup" />
       <recent name="$PROJECT_DIR$/ejerciciokenwin/views/backup" />
@@ -356,7 +320,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1920" height="1055" extended-state="7" />
+    <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -379,13 +343,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ejerciciokenwin/alembic/versions/20200203_4b427116fcd1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ejerciciokenwin/alembic/versions/20200203_5e19bc8260f9.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
@@ -537,13 +494,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ejerciciokenwin/static/goodmorning.jpg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/development.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="72" selection-start-line="16" selection-start-column="72" selection-end-line="16" selection-end-column="72" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ejerciciokenwin/views/task_scheduler.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -697,6 +647,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="139" column="43" lean-forward="true" selection-start-line="139" selection-start-column="43" selection-end-line="139" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/production.ini">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/development.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="16" column="170" selection-start-line="16" selection-start-column="170" selection-end-line="16" selection-end-column="170" />
         </state>
       </provider>
     </entry>
