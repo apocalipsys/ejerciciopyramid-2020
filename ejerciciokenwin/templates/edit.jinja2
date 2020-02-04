@@ -3,9 +3,14 @@
 {% block title %} {{name}} {% endblock title %}
 
 {% block content %}
+<div class="jumbotron jumbotron-fluid" id="edit-user">
+  <div class="container">
 
-<h1>Edit</h1>
-<h2>{{user.name}}</h2>
+
+    <h1 class="display-4">Edit user</h1>
+    <p class="lead">{{user.name}}</p>
+  </div>
+</div>
 
 <ul class="list-group list-group-flush">
   <li class="list-group-item list-group-item-light">Name: {{ user.name }} - Role: {{user.role}}</li>

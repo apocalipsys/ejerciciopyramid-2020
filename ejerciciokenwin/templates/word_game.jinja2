@@ -2,10 +2,14 @@
 
 {% block title %} {{name}} {% endblock title %}
 {% block content %}
+<div class="jumbotron jumbotron-fluid" id="word-game">
+  <div class="container">
 
-<h1>Select a letter or try!</h1>
-<h2>{{request.user.name}}</h2>
 
+    <h1 class="display-4">Misterious word game</h1>
+    <p class="lead">{{request.user.name}}</p>
+  </div>
+</div>
 
 <!--
 <div>

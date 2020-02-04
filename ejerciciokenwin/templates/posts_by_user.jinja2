@@ -2,9 +2,14 @@
 
 {% block title %} {{name}} {% endblock title %}
 {% block content %}
+<div class="jumbotron jumbotron-fluid" id="post-by-user">
+  <div class="container">
 
-<h1>Posted by:</h1>
-<h2>{{user.name}}</h2>
+
+    <h1 class="display-4">Posted by:</h1>
+    <p class="lead">{{user.name}}</p>
+  </div>
+</div>
 
 <dl>
     <dt>User name: {{user.name}}</dt>

@@ -3,9 +3,14 @@
 {% block title %} {{name}} {% endblock title %}
 
 {% block content %}
+<div class="jumbotron jumbotron-fluid" id="assign-task">
+  <div class="container">
 
-<h1>Assign a task</h1>
-<h2></h2>
+
+    <h1 class="display-4">Assign a Task</h1>
+
+  </div>
+</div>
 
 <form class="form-group" action="{{ url }}" method="post">
 <input type="hidden" name="next" value="{{ next_url }}">

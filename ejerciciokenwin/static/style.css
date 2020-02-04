@@ -67,3 +67,77 @@ hr {
     cursor: pointer;
 }
 
+#morning{
+    background-image: url('/static/goodmorning.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#afternoon{
+    background-image: url('/static/goodafternoon.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#night{
+    background-image: url('/static/goodnight.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#assign-task{
+    background-image: url('/static/assign-task.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#tasks-by-user{
+    background-image: url('/static/tasks-by-user.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#edit-user{
+    background-image: url('/static/goodnight.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#post-by-user{
+    background-image: url('/static/post-a-post.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#post-a-post{
+    background-image: url('/static/post-a-post.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#edit-post{
+    background-image: url('/static/edit-post.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#word-game{
+    background-image: url('/static/word-game.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#number-game{
+    background-image: url('/static/number-game.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#profile{
+    background-image: url('/static/profile.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#admin{
+    background-image: url('/static/admin.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
