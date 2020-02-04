@@ -25,7 +25,7 @@
                   User: <span class="name"> <strong>{{ request.user.name }}</strong></span>
               {% if request.user.role !='admin' %}
               <span class="btn-group">
-                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Users
                 </button>
                 {% for score in request.user.score %}
@@ -48,8 +48,10 @@
                 {% endif %}
 
                 {% endfor %}
+                {% if request.user.role != 'admin' %}
                 Incomplete Tasks: <strong style="color:red;"> {{u|last}} </strong>
                 Completed Tasks: <strong style="color:white;"> {{d|last}} </strong>
+                {% endif %}
               </span>
 
 
@@ -67,7 +69,11 @@
             |<a class="text-light" href="{{request.route_url('posts', user=request.user.name)}}"> New post </a>|
             |<a class="text-light" href="{{request.route_url('number_game', user=request.user.name)}}"> Number Game </a>|
             |<a class="text-light" href="{{request.route_url('word_game', user=request.user.name)}}"> Misterious word game </a>|
-            |<a class="text-light" href="{{request.route_url('tasks_by_user', user=request.user.name)}}"> My tasks </a>|
+            {% if request.user.role == 'admin' %}
+            |<a class="text-light" href="{{request.route_url('tasks')}}"> Assign a task</a>|
+            {% else %}
+            |<a class="text-light" href="{{request.route_url('tasks_by_user', user=request.user.name)}}"> My Tasks</a>|
+            {% endif %}
             <a id="logout" class="badge badge-dark" href="{{request.route_url('logout')}}">Logout</a>
             </p>
             {% endif %}

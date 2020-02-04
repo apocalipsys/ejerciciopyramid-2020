@@ -69,7 +69,7 @@ class Task:
             # This horrible way of manage intervals of
             # time is a "temporary" solution. str to datetime,
             # datetime to timedelta for operate in the
-            # subtraction and then convert ir to str
+            # subtraction and then convert it to str
             # to store in the database.
             for c in date_query:
                 actived_at = c.active_date
@@ -84,6 +84,7 @@ class Task:
             self.db.query(Tasks).filter_by(id=task_id).update({Tasks.done: True, Tasks.finish: date, Tasks.time_working: time_working, Tasks.active: False}, synchronize_session=False)
             self.request.session.flash(f'You Finished a task $$$ ;) ', queue='', allow_duplicate=True)
             return HTTPFound(location=next_url)
+
         if 'active' in self.request.params:
             task_id = self.request.params['active']
             print(f'Task id active and not finished: {task_id}')
@@ -104,8 +105,8 @@ class Task:
             # This horrible way of manage intervals of
             # time is a "temporary" solution. str to datetime,
             # datetime to timedelta for operate in the
-            # subtraction and then convert ir to str
-            # to store in the database.
+            # subtraction and then convert it to str
+            # to store in the database puuuff
             for c in date_query:
                 actived_at = c.active_date
                 sub_time = c.time_working
@@ -121,10 +122,7 @@ class Task:
             self.request.session.flash(f'You Puased  the task ', queue='', allow_duplicate=True)
             return  HTTPFound(location=next_url)
 
-
-        #QUE GENIALIDAD ESTO:
         tasks = self.db.query(Tasks).order_by(Tasks.date.desc()).filter_by(user_id=user.id).all()
-
 
         return {'name': 'Tasks by user', 'user':user, 'next_url': next_url,
                 'user_tasks': tasks}

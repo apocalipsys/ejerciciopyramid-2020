@@ -7,9 +7,10 @@
 <h1>Assign a task</h1>
 <h2></h2>
 
-<form class="form-inline" action="{{ url }}" method="post">
+<form class="form-group" action="{{ url }}" method="post">
 <input type="hidden" name="next" value="{{ next_url }}">
-<label for="username" class="my-1 mr-2">User</label>
+
+    <label for="username" class="my-1 mr-2">User</label>
   <select name="user_name" id="username" class="custom-select my-1 mr-sm-2">
     <option selected>Choose...</option>
       {% for u in users %}
@@ -20,8 +21,9 @@
     <label for="exampleFormControlTextarea1">Task</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="task_text"></textarea>
   </div>
-  <button type="submit" name="form.submitted"  value="Tasks" class="btn btn-primary my-1">Submit</button>
+  <button type="submit" name="form.submitted"  value="Tasks" class="btn btn-outline-dark my-1">Submit</button>
 </form>
+
 {% endblock content %}
 
 

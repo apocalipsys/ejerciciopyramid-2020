@@ -13,8 +13,8 @@
     <dt>Title: {{post.title}} | Date: {{post.date}}</dt>
         <dd>{{post.text}}</dd>
 </dl>
-<a class="btn btn-primary" href="{{request.route_url('delete_post', post_id=post.id)}}" role="button">Delete</a>
-<a class="btn btn-primary" href="{{request.route_url('edit_post', user=request.user.name, post_id=post.id)}}" role="button">Edit</a>
+<a class="btn btn-outline-dark" href="{{request.route_url('delete_post', post_id=post.id)}}" role="button">Delete</a>
+<a class="btn btn-outline-dark" href="{{request.route_url('edit_post', user=request.user.name, post_id=post.id)}}" role="button">Edit</a>
 <hr>
 {% endfor %}
 

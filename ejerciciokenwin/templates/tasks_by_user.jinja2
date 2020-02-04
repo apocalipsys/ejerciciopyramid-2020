@@ -18,24 +18,22 @@
           <input type="checkbox" class="custom-control-input" id="pausetask" checked disabled>
             <label class="custom-control-label" for="donetask">TASK STATE: <strong class="blinking">| ACTIVE |</strong></label>
             <div>
-          <button type="submit" name="pause" value="{{ task.id }}" class="btn btn-warning my-1">PAUSE TASK</button>
+          <button type="submit" name="pause" value="{{ task.id }}" class="btn btn-outline-warning my-1">PAUSE TASK</button>
             </div>
           {% endif %}
-
-            {% if task.done == False %}
-          <input type="checkbox" class="custom-control-input" id="donetask" checked disabled>
-            <div>
-          <button type="submit" name="finish" value="{{ task.id }}" class="btn btn-danger my-1">FINISH TASK</button>
-            </div>
-          {% endif %}
-
 
           {% if task.active == False and task.done == False %}
           <input type="checkbox" class="custom-control-input" id="undonetask" disabled>
             <label class="custom-control-label" for="undonetask">TASK STATE: <strong class="blinking">| PAUSED |</strong>
             </label>
             <div>
-          <button type="submit" name="active" value="{{ task.id }}" class="btn btn-primary my-1">ACTIVE!</button>
+          <button type="submit" name="active" value="{{ task.id }}" class="btn btn-outline-primary my-1">ACTIVE!</button>
+            </div>
+          {% endif %}
+             {% if task.done == False %}
+          <input type="checkbox" class="custom-control-input" id="donetask" checked disabled>
+            <div>
+          <button type="submit" name="finish" value="{{ task.id }}" class="btn btn-outline-danger my-1">FINISH TASK</button>
             </div>
           {% endif %}
                 {% if task.done == True %}
