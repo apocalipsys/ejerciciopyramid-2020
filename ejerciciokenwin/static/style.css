@@ -53,3 +53,17 @@ hr {
     99%{    color:transparent;  }
     100%{   color: #007acc;    }
 }
+
+.zoom-menu{
+    display: inline-block;
+    -webkit-transition: all 0.1s ease-out;
+}
+
+.zoom-menu:hover {
+    -webkit-transform: scale(1.1);
+    color: white;
+    text-decoration: none;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px black;
+    cursor: pointer;
+}
+

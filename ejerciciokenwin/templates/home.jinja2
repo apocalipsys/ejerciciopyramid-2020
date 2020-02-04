@@ -18,13 +18,13 @@
           <div class="col-md-10">
           <div class="content">
 
-            <span class="d-block p-2 bg-dark text-white"><strong>Portal de Usuarios</strong>
+            <span style="text-align: center" class="d-block p-2 bg-dark text-white"><strong>Users Portal | </strong>
               {% if request.user is none %}
                         <a class="text-light" href="{{ request.route_url('login') }}">Login</a>
               {% else %}
                   User: <span class="name"> <strong>{{ request.user.name }}</strong></span>
               {% if request.user.role !='admin' %}
-              <span class="btn-group">
+              <span style="text-align: center" class="d-block bg-dark text-white">
                 <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Users
                 </button>
@@ -58,21 +58,21 @@
               {% endif %}
             </span>
             {% if request.user is none %}
-            <p class="pull-right">
+            <p style="background: black;text-align: center;">
             <a id="login" class="badge badge-light" href="{{ request.route_url('login') }}">Login</a>
             <a id="register" class="badge badge-light" href="{{ request.route_url('register') }}">Register</a>
             </p><br>
             {% else %}
-            <p class="pull-right">
-            |<a class="text-light" href="{{request.route_url('welcome')}}"> Home </a>|
-            |<a class="text-light" href="{{request.route_url('profile', user=request.user.name)}}"> Profile </a>|
-            |<a class="text-light" href="{{request.route_url('posts', user=request.user.name)}}"> New post </a>|
-            |<a class="text-light" href="{{request.route_url('number_game', user=request.user.name)}}"> Number Game </a>|
-            |<a class="text-light" href="{{request.route_url('word_game', user=request.user.name)}}"> Misterious word game </a>|
+            <p style="background: black;text-align: center;">
+            | <a class="zoom-menu text-light" href="{{request.route_url('welcome')}}"> Home </a> |
+            | <a class="zoom-menu text-light" href="{{request.route_url('profile', user=request.user.name)}}"> Profile </a> |
+            | <a class="zoom-menu text-light" href="{{request.route_url('posts', user=request.user.name)}}"> New post </a> |
+            | <a class="zoom-menu text-light" href="{{request.route_url('number_game', user=request.user.name)}}"> Number Game </a> |
+            | <a class="zoom-menu text-light" href="{{request.route_url('word_game', user=request.user.name)}}"> Misterious word game </a> |
             {% if request.user.role == 'admin' %}
-            |<a class="text-light" href="{{request.route_url('tasks')}}"> Assign a task</a>|
+            | <a class="zoom-menu text-light" href="{{request.route_url('tasks')}}"> Assign a task</a> |
             {% else %}
-            |<a class="text-light" href="{{request.route_url('tasks_by_user', user=request.user.name)}}"> My Tasks </a>|
+            | <a class="zoom-menu text-light" href="{{request.route_url('tasks_by_user', user=request.user.name)}}"> My Tasks </a> |
             {% endif %}
             <a id="logout" class="badge badge-dark" href="{{request.route_url('logout')}}">Logout</a>
             </p>
@@ -95,7 +95,7 @@
         </div><br>
         <div class="row">
           <div class="copyright">
-            Author: <a class="text-light" href="mailto:martinvargas82@gmail.com"> Martin Vargas </a>for a Kenwin chance
+            Author: <a class="text-light" href="mailto:martinvargas82@gmail.com"> Martin Vargas </a>for Kenwin
           </div>
         </div>
       </div>

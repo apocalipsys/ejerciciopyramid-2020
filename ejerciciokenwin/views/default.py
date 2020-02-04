@@ -100,6 +100,7 @@ class Views:
     def welcome(self):
 
         posts = self.db.query(BlogPosts).filter_by(user_id=self.request.user.id).all()
+        print(posts, self.request.user.id)
         g = greeting()
         if self.request.user.role == 'admin':
             self.request.session.flash(f'{g} You are the Administrator', queue='', allow_duplicate=False)
