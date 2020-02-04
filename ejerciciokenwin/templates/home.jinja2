@@ -72,7 +72,7 @@
             {% if request.user.role == 'admin' %}
             |<a class="text-light" href="{{request.route_url('tasks')}}"> Assign a task</a>|
             {% else %}
-            |<a class="text-light" href="{{request.route_url('tasks_by_user', user=request.user.name)}}"> My Tasks</a>|
+            |<a class="text-light" href="{{request.route_url('tasks_by_user', user=request.user.name)}}"> My Tasks </a>|
             {% endif %}
             <a id="logout" class="badge badge-dark" href="{{request.route_url('logout')}}">Logout</a>
             </p>

@@ -100,7 +100,6 @@ class Views:
     def welcome(self):
 
         posts = self.db.query(BlogPosts).filter_by(user_id=self.request.user.id).all()
-
         g = greeting()
         if self.request.user.role == 'admin':
             self.request.session.flash(f'{g} You are the Administrator', queue='', allow_duplicate=False)
@@ -245,7 +244,6 @@ class Views:
 
         # Role or username validation/validacion de rol
         user = get_user(self.request)
-        print(user.role)
         if user.role != 'admin' and username is None: return True
         if user.role == 'admin' and username is None: return False
         if username != user.name: return True

@@ -27,7 +27,6 @@ def login(request):
     # Validacion del formulario
     if 'form.submitted' in request.params:
         login = request.params['login']
-        #caca = request.params['soree']
         password = request.params['password']
         user = request.dbsession.query(User).filter_by(name=login).first()
         # User Validate
@@ -53,6 +52,7 @@ def register(request):
         next_url = request.route_url('home')
     message = ''
     register = ''
+
     # Form validate and letters/numbers (regex) for the username
     # Validacion del formulario y solo se permiten letras y numeros para nombres de usuario
     if 'form.submitted' in request.params:
