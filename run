@@ -1,5 +1,8 @@
 #!/bin/bash
 set -e
 python setup.py develop
+alembic -c production.ini stamp heads
+alembic -c production.ini revision --autogenerate -m "init"
+alembic -c production.ini upgrade head
 initialize_ejerciciokenwin_db production.ini
 python runapp.py
