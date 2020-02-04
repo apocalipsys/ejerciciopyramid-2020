@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5cdbd69-e3be-4a5f-ab47-b93493bd970b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/runapp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/development.ini" beforeDir="false" afterPath="$PROJECT_DIR$/development.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production.ini" beforeDir="false" afterPath="$PROJECT_DIR$/production.ini" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,15 +14,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ejerciciokenwin/templates/edit.jinja2">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" column="52" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ejerciciokenwin/templates/posts_by_user.jinja2">
           <provider selected="true" editor-type-id="text-editor">
@@ -40,8 +32,17 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/production.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/run">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -49,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/development.ini">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="65">
-              <caret line="16" column="170" selection-start-line="16" selection-start-column="170" selection-end-line="16" selection-end-column="170" />
+              <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -63,7 +64,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/runapp.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
@@ -121,7 +122,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ejerciciokenwin/pshell.py" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/templates/game.jinja2" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/views/task_scheduleringer.py" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/security.py" />
@@ -169,15 +169,17 @@
         <option value="$PROJECT_DIR$/ejerciciokenwin/templates/posts_by_user.jinja2" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/templates/admin.jinja2" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/static/style.css" />
-        <option value="$PROJECT_DIR$/development.ini" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/runapp.py" />
+        <option value="$PROJECT_DIR$/development.ini" />
+        <option value="$PROJECT_DIR$/production.ini" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="960" />
     <option name="y" value="25" />
-    <option name="width" value="1920" />
+    <option name="width" value="960" />
     <option name="height" value="1055" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -324,13 +326,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ejerciciokenwin/alembic/versions/20200203_9d01b7827405.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ejerciciokenwin/alembic/versions/20200203_1f0d5c5929de.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -610,16 +605,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/production.ini">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/development.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="16" column="170" selection-start-line="16" selection-start-column="170" selection-end-line="16" selection-end-column="170" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -630,6 +615,9 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/run">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/runapp.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -637,6 +625,20 @@
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/development.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/production.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
