@@ -14,7 +14,9 @@
   <select name="user_name" id="username" class="custom-select my-1 mr-sm-2">
     <option selected>Choose...</option>
       {% for u in users %}
+      {% if u.role != 'admin' %}
     <option value="{{u.name}}">Name: {{ u.name }} role: {{ u.role }}</option>
+      {% endif %}
     {% endfor %}
   </select>
 <div class="form-group">

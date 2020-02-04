@@ -92,10 +92,7 @@ class Views:
     #home view/vista home
     @view_config(route_name='home', renderer='../templates/home.jinja2')
     def home(self):
-        #users_posts = self.db.query(User).all()
-        #score = self.db.query(Score).filter_by(user_id=self.request.user.id).one()
-
-        return {'name':'Home'}#,'users_posts':users_posts}#,'score':score.score}
+        return {'name':'Home'}
 
 
     #Welcome view/vista de binvenida
@@ -103,15 +100,13 @@ class Views:
     def welcome(self):
 
         posts = self.db.query(BlogPosts).filter_by(user_id=self.request.user.id).all()
-        #users_posts = self.db.query(User).all()
-        #score = self.db.query(Score).filter_by(user_id=self.request.user.id).one()
 
         g = greeting()
         if self.request.user.role == 'admin':
             self.request.session.flash(f'{g} You are the Administrator', queue='', allow_duplicate=False)
             return HTTPFound(location='/admin')
 
-        return {'name':'Welcome','greeting':g, 'posts':posts}#, 'users_posts':users_posts}#, 'score':score.score}
+        return {'name':'Welcome','greeting':g, 'posts':posts}
 
 
     #Profile view/Vista de perfil de usuario
@@ -119,8 +114,6 @@ class Views:
     def profile(self):
         username = self.request.matchdict['user']
         next_url = self.request.route_url('welcome')
-        #users_posts = self.db.query(User).all()
-        #score = self.db.query(Score).filter_by(user_id=self.request.user.id).one()
 
         # if no user no func/si no hay usuario no hay funcion
         # User validation/validacion de usuario
@@ -150,14 +143,13 @@ class Views:
         #image/imagen
         image = base64.b64encode(profile.image).decode('ascii')
 
-        return {'name': 'Profile', 'user': profile, 'img':image, 'next_url':next_url}#, 'users_posts':users_posts}#, 'score':score.score}
+        return {'name': 'Profile', 'user': profile, 'img':image, 'next_url':next_url}
 
     #post view/ vista de posteo
     @view_config(route_name='posts', renderer='../templates/posts.jinja2')
     def posts(self):
         username = self.request.matchdict['user']
         next_url = self.request.route_url('welcome')
-        #score = self.db.query(Score).filter_by(user_id=self.request.user.id).one()
 
         # if no user no func/si no hay usuario no hay funcion
         # User validation/validacion de usuario
@@ -175,8 +167,8 @@ class Views:
             self.db.add(post)
             self.request.session.flash(f'User {user.name} has posted a new post', queue='', allow_duplicate=True)
             return HTTPFound(location=next_url)
-        #users_posts = self.db.query(User).all()
-        return {'name': 'Posts', 'user': user, 'next_url': next_url}# 'users_posts':users_posts}#, 'score':score.score}
+
+        return {'name': 'Posts', 'user': user, 'next_url': next_url}
 
     #post by user view/ vista de post por usuario
     @view_config(route_name='posts_by_user', renderer='../templates/posts_by_user.jinja2')
@@ -188,9 +180,8 @@ class Views:
         user = self.db.query(User).filter_by(name=username).one()
         posts = self.db.query(BlogPosts).filter_by(user_id=user.id).all()
         image = base64.b64encode(user.image).decode('ascii')
-        #users_posts = self.db.query(User).all()
 
-        return {'name': 'Posts by user', 'user': user, 'next_url': next_url, 'posts':posts, 'img':image}#, 'users_posts':users_posts}
+        return {'name': 'Posts by user', 'user': user, 'next_url': next_url, 'posts':posts, 'img':image}
 
     #delete post view(only owners/ borrar post (solo owners)
     @view_config(route_name='delete_post', renderer='../templates/welcome.jinja2')
@@ -207,6 +198,7 @@ class Views:
         post = self.db.query(BlogPosts).filter_by(id=post_id).one()
         self.db.delete(post)
         self.request.session.flash(f'The post titled {post.title} has been deleted succesfully', queue='', allow_duplicate=True)
+
         return HTTPFound(location=next_url)
 
     #Edit post view (only owners/ Vista editor de post(solo propietarios)
@@ -222,11 +214,10 @@ class Views:
 
         post_id = self.request.matchdict['post_id']
         post = self.db.query(BlogPosts).filter_by(id=post_id).one()
-        #user_id = self.db.query(User).filter_by(name=user).one()
+
         if 'form.submitted' in self.request.params:
             post_title = self.request.params['post_title']
             post_text = self.request.params['post_text']
-            #p = BlogPosts(title=post_title, text=post_text, user_id=user_id.id)
             self.db.query(BlogPosts).filter_by(id=post.id).update({BlogPosts.title: post_title, BlogPosts.text: post_text, BlogPosts.date:datetime.utcnow()}, synchronize_session=False)
             self.request.session.flash(f'User {user} has edited {post.title} post', queue='', allow_duplicate=True)
             return HTTPFound(location=next_url)
@@ -239,11 +230,13 @@ class Views:
         users = self.db.query(User).filter_by(name=User.name).all()
         posts = self.db.query(BlogPosts).filter_by(user_id=self.request.user.id).all()
         tasks = self.db.query(Tasks).filter_by(user_id=User.id).all()
+
         #Access validation/validacion de acceso
         if self.out_or_stay(): return HTTPFound(location='/error')
         count = 0
         title = str(self.request.user.name).capitalize()+' Account'
         return dict(name=title, users=users, posts=posts, tasks=tasks, count=count)
+
 
     #pseudodecorator
     def out_or_stay(self, username=None):

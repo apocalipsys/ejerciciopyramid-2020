@@ -29,7 +29,6 @@ class Game:
     #number game view/ vista de number game
     @view_config(route_name='number_game', renderer='../templates/number_game.jinja2')
     def number_game(self):
-        #users_posts = self.db.query(User).all()
         username = self.request.matchdict['user']
         user = self.db.query(User).filter_by(name=username).first()
         next_url = self.request.route_url('number_game', user=username)
@@ -40,20 +39,17 @@ class Game:
 
         if not next_url:
             next_url = self.request.route_url('home')
-        print('hola')
+
         if 'form.submitted' in self.request.params:
             selected_number = self.request.params['selected_number']
             random_number = random.randint(0, 10)
             if int(selected_number) == random_number:
-                #old_score =
-                win_score = 10
+                win_score = 50
                 score = [s for s in self.db.query(Score.user_id).all() for s in s]
-                print(score)
                 if user.id in score:
-                    update_score = self.db.query(Score).filter_by(user_id=user.id).update(
+                    self.db.query(Score).filter_by(user_id=user.id).update(
                         {Score.score: Score.score+win_score, Score.date: datetime.utcnow()},
                         synchronize_session=False)
-                    print(update_score)
                     actual_score = self.db.query(Score).filter_by(user_id=user.id).first()
                     self.request.session.flash(f'YES! {user.name}, you have sumed 10 points and your actual score is {actual_score.score}', queue='', allow_duplicate=True)
                     return HTTPFound(location=next_url)
@@ -65,7 +61,7 @@ class Game:
                     f'My number was {random_number} {user.name} you fail! jaja Try again', queue='',
                     allow_duplicate=True)
 
-        return {'name': 'Number Game', 'user': user, 'next_url': next_url}#, 'users_posts':users_posts}#, 'score':score.score}
+        return {'name': 'Number Game', 'user': user, 'next_url': next_url}
 
 
     #number game view/ vista de number game
@@ -73,7 +69,6 @@ class Game:
     def word_game(self):
         global rword, word, letters
         len_word = len(word)
-        #users_posts = self.db.query(User).all()
         username = self.request.matchdict['user']
         user = self.db.query(User).filter_by(name=username).first()
         next_url = self.request.route_url('word_game', user=username)
@@ -87,9 +82,6 @@ class Game:
 
         if 'form.submitted' in self.request.params:
             selected_letter = self.request.params['selected_letter']
-            print(selected_letter)
-
-
 
             if selected_letter in rword or list(selected_letter) == list(word):
                 while selected_letter in rword:
@@ -98,29 +90,24 @@ class Game:
                     self.request.session.flash(
                         f'Yes {selected_letter} is in the misterious word, continue!', queue='',
                         allow_duplicate=True)
-                    print(rword)
 
                 if list(selected_letter) == list(word) or rword == []:
                     win_score = 50
                     score = [s for s in self.db.query(Score.user_id).all() for s in s]
-                    print(score)
                     if user.id in score:
                         update_score = self.db.query(Score).filter_by(user_id=user.id).update(
                             {Score.score: Score.score + win_score, Score.date: datetime.utcnow()},
                             synchronize_session=False)
-                        print(update_score)
                         actual_score = self.db.query(Score).filter_by(user_id=user.id).first()
                         self.request.session.flash(
                             f'Yes {word} was the misterious word, you win 50 points! try a next word your actual score is {actual_score.score}',
                             queue='',
                             allow_duplicate=True)
-                        print(f'rword: {rword}, word: {word}')
                         try:
                             word = next(g)
                             rword = list(word)
                         except StopIteration:
                             pass
-                        print(f'cambio? {word}')
                         letters = []
                         return HTTPFound(location=next_url)
 
@@ -137,7 +124,6 @@ class Game:
                             rword = list(word)
                         except StopIteration:
                             pass
-                        print(f'cambio? {word}')
                         letters = []
                 return HTTPFound(location=next_url)
 
@@ -146,7 +132,6 @@ class Game:
                 self.request.session.flash(
                     f'No {selected_letter} is not in the misterious word, continue!', queue='',
                     allow_duplicate=True)
-                print(rword)
                 return HTTPFound(location=next_url)
 
 
@@ -160,7 +145,6 @@ class Game:
 
         # Role or username validation/validacion de rol
         user = get_user(self.request)
-        print(user.role)
         if user.role != 'admin' and username is None: return True
         if user.role == 'admin' and username is None: return False
         if username != user.name: return True

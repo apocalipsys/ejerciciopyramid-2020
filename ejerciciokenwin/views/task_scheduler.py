@@ -61,7 +61,6 @@ class Task:
             actived_at = ''
             sub_time = ''
             task_id = self.request.params['finish']
-            print(f'Task id finished: {task_id}')
             date = datetime.utcnow()
             date_query = self.db.query(Tasks).filter_by(id=task_id).all()
 
@@ -87,7 +86,6 @@ class Task:
 
         if 'active' in self.request.params:
             task_id = self.request.params['active']
-            print(f'Task id active and not finished: {task_id}')
             date = datetime.utcnow()
             self.db.query(Tasks).filter_by(id=task_id).update({Tasks.done: False, Tasks.active: True, Tasks.active_date: date}, synchronize_session=False)
             self.request.session.flash(f"You ACTIVE let's do it!", queue='', allow_duplicate=True)
@@ -97,7 +95,6 @@ class Task:
             task_id = self.request.params['pause']
             actived_at = ''
             sub_time = ''
-            print(f'Task id finished: {task_id}')
             date = datetime.utcnow()
             date_query = self.db.query(Tasks).filter_by(id=task_id).all()
 
@@ -117,7 +114,6 @@ class Task:
             time_working = str(time_working)
             ##########################################
 
-            print(f'Task id non active and not finished(paused): {task_id}')
             self.db.query(Tasks).filter_by(id=task_id).update({Tasks.done: False, Tasks.active: False, Tasks.time_working: time_working}, synchronize_session=False)
             self.request.session.flash(f'You Puased  the task ', queue='', allow_duplicate=True)
             return  HTTPFound(location=next_url)
@@ -135,7 +131,6 @@ class Task:
 
         # Role or username validation/validacion de rol
         user = get_user(self.request)
-        print(user.role)
         if user.role != 'admin' and username is None: return True
         if user.role == 'admin' and username is None: return False
         if user.role == 'admin' and username is not  None: return False
