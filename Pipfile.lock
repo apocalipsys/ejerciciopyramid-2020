@@ -1,0 +1,35 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "d81fe712c4b4b9cf22cd51f425379cc9891e6ac2e9d4cc2c733d58b057f3d453"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.7"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "docopt": {
+            "hashes": [
+                "sha256:49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"
+            ],
+            "version": "==0.6.2"
+        },
+        "httpserver": {
+            "hashes": [
+                "sha256:5bc3daf82512f2f0b311cca68d8ea7a3918c7520d266ce1b8660ed46c478c2e0",
+                "sha256:ed8845192b1b282753e529feed054b0ccc7a7ab64a8e9632b13cc73108eeb30c"
+            ],
+            "index": "pypi",
+            "version": "==1.1.0"
+        }
+    },
+    "develop": {}
+}
