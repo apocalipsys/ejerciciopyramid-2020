@@ -81,7 +81,7 @@ class Game:
             next_url = self.request.route_url('home')
 
         if 'form.submitted' in self.request.params:
-            selected_letter = self.request.params['selected_letter']
+            selected_letter = self.request.params['selected_letter'].lower()
 
             if selected_letter in rword or list(selected_letter) == list(word):
                 while selected_letter in rword:
