@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5cdbd69-e3be-4a5f-ab47-b93493bd970b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/ejerciciokenwin/templates/admin.jinja2" beforeDir="false" afterPath="$PROJECT_DIR$/ejerciciokenwin/templates/admin.jinja2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run" beforeDir="false" afterPath="$PROJECT_DIR$/run" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,15 +13,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ejerciciokenwin/templates/posts_by_user.jinja2">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ejerciciokenwin/static/style.css">
           <provider selected="true" editor-type-id="text-editor">
@@ -39,11 +31,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ejerciciokenwin.sqlite">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="120">
+              <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -83,11 +80,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ejerciciokenwin/templates/admin.jinja2">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="33" column="23" lean-forward="true" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
+            <state relative-caret-position="180">
+              <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -168,13 +165,13 @@
         <option value="$PROJECT_DIR$/ejerciciokenwin/templates/posts.jinja2" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/templates/tasks_by_user.jinja2" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/templates/posts_by_user.jinja2" />
-        <option value="$PROJECT_DIR$/ejerciciokenwin/templates/admin.jinja2" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/static/style.css" />
         <option value="$PROJECT_DIR$/runapp.py" />
         <option value="$PROJECT_DIR$/production.ini" />
         <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/development.ini" />
         <option value="$PROJECT_DIR$/run" />
+        <option value="$PROJECT_DIR$/development.ini" />
+        <option value="$PROJECT_DIR$/ejerciciokenwin/templates/admin.jinja2" />
       </list>
     </option>
   </component>
@@ -207,6 +204,12 @@
               <item name="ejerciciokenwin" type="462c0819:PsiDirectoryNode" />
               <item name="ejerciciokenwin" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ejerciciokenwin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ejerciciokenwin" type="462c0819:PsiDirectoryNode" />
+              <item name="ejerciciokenwin" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -333,9 +336,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ejerciciokenwin/alembic/versions/20200203_1f0d5c5929de.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/ejerciciokenwin/alembic/versions/20200203_1a8a4764b575.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -608,24 +608,10 @@
     <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ejerciciokenwin/templates/admin.jinja2">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="33" column="23" lean-forward="true" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ejerciciokenwin/routes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/development.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
@@ -646,10 +632,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ejerciciokenwin.sqlite">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/run">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="120">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/development.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ejerciciokenwin/templates/admin.jinja2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
         </state>
       </provider>
     </entry>
