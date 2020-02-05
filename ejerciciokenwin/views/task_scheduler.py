@@ -19,7 +19,6 @@ class Task:
         if self.out_or_stay(): return HTTPFound(location='/error')
 
         next_url = self.request.route_url('admin')
-
         if not next_url:
             next_url = self.request.route_url('home')
         users = self.db.query(User).all()
@@ -33,11 +32,39 @@ class Task:
             task = Tasks(task=task_text,user_id=user.id,done=False, active=False)
             self.db.add(task)
             self.request.session.flash(f'You give a task to {user.name} ', queue='', allow_duplicate=True)
+            next_url = self.request.route_url('tasks_by_user', user = user_name)
             return HTTPFound(location=next_url)
         tasks = self.db.query(Tasks).all()
 
         return {'name': 'Tasks', 'users': users, 'next_url': next_url,
                 'users_tasks': tasks}
+
+    @view_config(route_name='user_task_assign', renderer='../templates/user_task_assign.jinja2')
+    def user_task_assing(self):
+
+        username = self.request.matchdict['user']
+
+        # if no user no func/si no hay usuario no hay funcion
+        # Role validation/validacion de rol
+        if self.out_or_stay(): return HTTPFound(location='/error')
+
+        next_url = self.request.route_url('tasks_by_user', user=username)
+
+        if not next_url:
+            next_url = self.request.route_url('home')
+
+        # Form validate
+        # Validacion del formulario
+        if 'form.submitted' in self.request.params:
+            task_text = self.request.params['task_text']
+            user = self.db.query(User).filter_by(name=username).first()
+            task = Tasks(task=task_text, user_id=user.id, done=False, active=False)
+            self.db.add(task)
+            self.request.session.flash(f'You give a task to {user.name} ', queue='', allow_duplicate=True)
+            return HTTPFound(location=next_url)
+
+        return {'name': 'Tasks', 'user': username, 'next_url': next_url}
+
 
 
     @view_config(route_name='tasks_by_user', renderer='../templates/tasks_by_user.jinja2')

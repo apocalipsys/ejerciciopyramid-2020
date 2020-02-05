@@ -113,7 +113,7 @@ class Views:
     @view_config(route_name='profile', renderer='../templates/profile.jinja2')
     def profile(self):
         username = self.request.matchdict['user']
-        next_url = self.request.route_url('welcome')
+        next_url = self.request.route_url('profile', user=username)
 
         # if no user no func/si no hay usuario no hay funcion
         # User validation/validacion de usuario

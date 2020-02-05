@@ -1,0 +1,27 @@
+{% extends 'home.jinja2' %}
+
+{% block title %} {{name}} {% endblock title %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid" id="assign-task">
+  <div class="container">
+
+
+    <h1 class="display-4">Assign a Task to</h1>
+    <h2><label class="my-1 mr-2">{{ user }}</label></h2>
+
+  </div>
+</div>
+
+<form class="form-group" action="{{ url }}" method="post">
+<input type="hidden" name="next" value="{{ next_url }}">
+
+
+<div class="form-group">
+    <label for="exampleFormControlTextarea1">Task</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="task_text"></textarea>
+  </div>
+  <button type="submit" name="form.submitted"  value="Tasks" class="btn btn-outline-dark my-1">Submit</button>
+</form>
+
+{% endblock content %}

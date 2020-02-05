@@ -8,6 +8,7 @@ def includeme(config):
     config.add_route('admin', '/admin')
     config.add_route('tasks', '/tasks')
     config.add_route('tasks_by_user', '/{user}/tasks_by_user')
+    config.add_route('user_task_assign', '/{user}/user_task_assign')
     config.add_route('welcome', '/welcome')
     config.add_route('profile', '/{user}/profile')
     config.add_route('posts', '/{user}/posts')

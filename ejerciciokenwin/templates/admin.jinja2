@@ -17,7 +17,7 @@
     <div class="card-header p-2 bg-dark" id="headingOne">
       <h2 class="mb-0">
         <button class="btn btn-outline-link text-white" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-          <strong>Users, Posts and Roles</strong>
+          <strong>Users settings</strong>
         </button>
       </h2>
     </div>
@@ -38,7 +38,7 @@
         <a class="list-group-item list-group-item-action" href="{{ request.route_url('delete_user', user=user.name) }}"> Delete </a>
         <a class="list-group-item list-group-item-action" href="{{ request.route_url('edit_user', user=user.name) }}"> Edit role </a>
         <a class="list-group-item list-group-item-action" href="{{request.route_url('posts_by_user', user=user.name)}}"> Posts</a><br>
-        <a class="list-group-item list-group-item-action" href="{{request.route_url('tasks')}}"> Assign a task</a><br>
+        <a class="list-group-item list-group-item-action" href="{{request.route_url('user_task_assign', user=user.name)}}"> Assign a task</a><br>
           {% for task in tasks %}
           {% if task.user_id == user.id %}
           {% if task.done == False %}
