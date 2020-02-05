@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5cdbd69-e3be-4a5f-ab47-b93493bd970b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ejerciciokenwin/views/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/ejerciciokenwin/views/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ejerciciokenwin/templates/home.jinja2" beforeDir="false" afterPath="$PROJECT_DIR$/ejerciciokenwin/templates/home.jinja2" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +35,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/development.ini">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="65">
@@ -44,11 +44,17 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ejerciciokenwin/templates/home.jinja2">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="400">
+              <caret line="98" column="100" lean-forward="true" selection-start-line="98" selection-start-column="100" selection-end-line="98" selection-end-column="100" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -155,7 +161,6 @@
         <option value="$PROJECT_DIR$/ejerciciokenwin/views/auth.py" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/views/default.py" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/templates/welcome.jinja2" />
-        <option value="$PROJECT_DIR$/ejerciciokenwin/templates/home.jinja2" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/templates/game.html" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/templates/profile.jinja2" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/templates/tasks.jinja2" />
@@ -174,6 +179,7 @@
         <option value="$PROJECT_DIR$/ejerciciokenwin/templates/admin.jinja2" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/views/game.py" />
         <option value="$PROJECT_DIR$/development.ini" />
+        <option value="$PROJECT_DIR$/ejerciciokenwin/templates/home.jinja2" />
       </list>
     </option>
   </component>
@@ -206,6 +212,12 @@
               <item name="ejerciciokenwin" type="462c0819:PsiDirectoryNode" />
               <item name="ejerciciokenwin" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ejerciciokenwin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ejerciciokenwin" type="462c0819:PsiDirectoryNode" />
+              <item name="ejerciciokenwin" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ejerciciokenwin" type="b2602c69:ProjectViewProjectNode" />
@@ -319,9 +331,9 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49822694" visible="true" weight="0.18934599" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49822694" visible="true" weight="0.18934599" />
       <window_info id="Structure" order="2" sideWeight="0.50177306" side_tool="true" weight="0.25527427" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.49893162" visible="true" weight="0.30594593" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49893162" visible="true" weight="0.30594593" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50106835" side_tool="true" weight="0.32864866" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" />
@@ -493,19 +505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ejerciciokenwin/templates/home.jinja2">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="87" selection-start-line="87" selection-end-line="87" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ejerciciokenwin/templates/number_game.jinja2">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -655,6 +654,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="65">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ejerciciokenwin/templates/home.jinja2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="98" column="100" lean-forward="true" selection-start-line="98" selection-start-column="100" selection-end-line="98" selection-end-column="100" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
