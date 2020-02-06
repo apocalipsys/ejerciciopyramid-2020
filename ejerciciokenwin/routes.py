@@ -2,6 +2,13 @@
 #En este archivo se configurar las rutas que vas a usar
 def includeme(config):
     config.add_static_view('static', 'static', cache_max_age=3600)
+    #api
+    config.add_route('extract_json','/extract_json')
+    config.add_route('user_list','/{user}/user_list')
+    config.add_route('add','/{user}/{password}/add')
+    config.add_route('del','/{user}/del')
+    config.add_route('getcookie', '/getcookie')
+
     config.add_route('home', '/')
     config.add_route('delete_user', '/{user}/delete')
     config.add_route('edit_user', '/{user}/edit_user')
