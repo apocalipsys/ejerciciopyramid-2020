@@ -17,19 +17,23 @@ from ejerciciokenwin import static_dir
 from .geoloc import Localizacion
 import pytz
 import requests
+
 #Greeting function time adecuate
 #Funcion para saludar adecuada al horiario
-
-
 def greeting(ip):
-    geloc = Localizacion(ip)
-    timezone = pytz.timezone(geloc.tz)
-    time_now = datetime.now()
-    com = time_now.astimezone(timezone)
-    h = com.hour
-    dayparts = {12:'Good morning',18:'Good afternoon',24:'Good night'}
-    greet =[v for k,v in dayparts.items() if h < k][0]
-    return greet
+    if ip == '127.0.0.1':
+        try:
+            ip = requests.get('https://api.ipify.org').text
+            geloc = Localizacion(ip)
+            timezone = pytz.timezone(geloc.tz)
+            time_now = datetime.now()
+            com = time_now.astimezone(timezone)
+            h = com.hour
+            dayparts = {12: 'Good morning', 18: 'Good afternoon', 24: 'Good night'}
+            greet = [v for k, v in dayparts.items() if h < k][0]
+            return greet, geloc
+        except:
+            return None, None
 
 #Views class/ Clase vistas
 @view_defaults(renderer='../templates/home.jinja2')
@@ -108,15 +112,16 @@ class Views:
     def welcome(self):
 
         posts = self.db.query(BlogPosts).filter_by(user_id=self.request.user.id).all()
-        ip_client = self.request.client_addr
-        #ip_client = requests.get('https://api.ipify.org').text
-        g = greeting(ip_client)
-        loc = Localizacion(ip_client)
-        if self.request.user.role == 'admin':
-            self.request.session.flash(f'{g} You are the Administrator', queue='', allow_duplicate=False)
-            return HTTPFound(location='/admin')
 
-        return {'name':'Welcome','greeting':g, 'posts':posts, 'city':loc.nombre_ciudad, 'country':loc.pais}
+        ip_client = self.request.client_addr
+        g, geloc = greeting(ip_client)
+        #loc = Localizacion(ip_client)
+        if self.request.user.role == 'admin':
+            self.request.session.flash(f'{"Hello " if g == None else g} You are the Administrator', queue='', allow_duplicate=False)
+            return HTTPFound(location='/admin')
+        if geloc == None:
+            return {'name': 'Welcome', 'greeting': g, 'posts': posts, 'city': 'some','country': 'where'}
+        return {'name':'Welcome','greeting':g, 'posts':posts, 'city':geloc.city_name, 'country':geloc.country_name}
 
 
     #Profile view/Vista de perfil de usuario

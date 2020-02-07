@@ -67,6 +67,13 @@ hr {
     cursor: pointer;
 }
 
+
+
+#hello{
+    background-image: url('/static/hello.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 #morning{
     background-image: url('/static/goodmorning.jpg');
     background-size: cover;

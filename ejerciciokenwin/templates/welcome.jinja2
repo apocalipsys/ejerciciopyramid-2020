@@ -2,7 +2,7 @@
 
 {% block title %} {{name}} {% endblock title %}
 {% block content %}
-<span style="color: grey;">You are connected from {{city}}, {{country}}</span>
+<span style="color: grey;">You are connected from {{city}} {{country}}</span><br>
 {% if greeting == 'Good morning' %}
 <div class="jumbotron jumbotron-fluid" id="morning">
   <div class="container">
@@ -31,6 +31,16 @@
 
 
     <h1 class="display-4">{{greeting}}</h1>
+    <p class="lead">{{request.user.name}}</p>
+  </div>
+</div>
+{% endif %}
+{% if greeting == None %}
+<div class="jumbotron jumbotron-fluid" id="hello">
+  <div class="container">
+
+
+    <h1 class="display-4">Hello</h1>
     <p class="lead">{{request.user.name}}</p>
   </div>
 </div>
