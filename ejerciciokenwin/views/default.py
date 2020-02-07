@@ -27,10 +27,8 @@ def greeting(ip):
     time_now = datetime.now()
     com = time_now.astimezone(timezone)
     h = com.hour
-    #h = datetime.today().hour
     dayparts = {12:'Good morning',18:'Good afternoon',24:'Good night'}
     greet =[v for k,v in dayparts.items() if h < k][0]
-    print(h, geloc.tz, greet)
     return greet
 
 #Views class/ Clase vistas
@@ -110,15 +108,15 @@ class Views:
     def welcome(self):
 
         posts = self.db.query(BlogPosts).filter_by(user_id=self.request.user.id).all()
-        print(posts, self.request.user.id)
         ip_client = self.request.client_addr
         #ip_client = requests.get('https://api.ipify.org').text
         g = greeting(ip_client)
+        loc = Localizacion(ip_client)
         if self.request.user.role == 'admin':
             self.request.session.flash(f'{g} You are the Administrator', queue='', allow_duplicate=False)
             return HTTPFound(location='/admin')
 
-        return {'name':'Welcome','greeting':g, 'posts':posts}
+        return {'name':'Welcome','greeting':g, 'posts':posts, 'city':loc.nombre_ciudad, 'country':loc.pais}
 
 
     #Profile view/Vista de perfil de usuario

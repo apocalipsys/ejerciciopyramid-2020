@@ -1,8 +1,8 @@
 {% extends 'home.jinja2' %}
 
 {% block title %} {{name}} {% endblock title %}
-Good morning',18:'Good afternoon',24:'Good night
 {% block content %}
+<span style="color: grey;">You are connected from {{city}}, {{country}}</span>
 {% if greeting == 'Good morning' %}
 <div class="jumbotron jumbotron-fluid" id="morning">
   <div class="container">
