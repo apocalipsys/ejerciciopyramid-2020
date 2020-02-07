@@ -42,11 +42,21 @@ class BlogPosts(Base):
     date = Column(DateTime,nullable=False,default=datetime.utcnow)
     title = Column(Text,nullable=False)
     text = Column(Text,nullable=False)
+    city_name = Column(Text)
+    province_name = Column(Text)
+    country_name = Column(Text)
+    ip = Column(Text)
 
-    def __init__(self,title,text,user_id):
+
+    def __init__(self,title,text,user_id, city_name, province_name, country_name, ip):
         self.title = title
         self.text = text
         self.user_id = user_id
+        self.city_name = city_name
+        self.province_name = province_name
+        self.country_name = country_name
+        self.ip = ip
+
 
     def __repr__(self):
         return f'Post id {self.id} -- Fecha: {self.date} -- Titulo: {self.title}'

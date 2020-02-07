@@ -1,6 +1,6 @@
 import geoip2.database
 
-class Localizacion:
+class Localization:
     def __init__(self, ip):
         self.ip = ip
         self.read = geoip2.database.Reader('ejerciciokenwin/views/GeoLite2-City.mmdb')

@@ -14,24 +14,10 @@ import base64
 import os
 import shutil
 from ejerciciokenwin import static_dir
-from .geoloc import Localizacion
+from .geoloc import Localization
 import pytz
 
-#Greeting function time adecuate
-#Funcion para saludar adecuada al horiario
-def greeting(ip_client):
-    try:
-        ip = ip_client
-        geloc = Localizacion(ip)
-        timezone = pytz.timezone(geloc.tz)
-        time_now = datetime.now()
-        com = time_now.astimezone(timezone)
-        h = com.hour
-        dayparts = {12: 'Good morning', 18: 'Good afternoon', 24: 'Good night'}
-        greet = [v for k, v in dayparts.items() if h < k][0]
-        return greet, geloc
-    except:
-        return None, None
+
 
 
 #Views class/ Clase vistas
@@ -40,6 +26,21 @@ class Views:
     def __init__(self, request):
         self.request = request
         self.db = self.request.dbsession
+
+    # Greeting function time adecuate
+    # Funcion para saludar adecuada al horiario
+    def greeting(self):
+        try:
+            geloc = self.request.localization
+            timezone = pytz.timezone(geloc.tz)
+            time_now = datetime.now()
+            com = time_now.astimezone(timezone)
+            h = com.hour
+            dayparts = {12: 'Good morning', 18: 'Good afternoon', 24: 'Good night'}
+            greet = [v for k, v in dayparts.items() if h < k][0]
+            return greet, geloc
+        except:
+            return None, None
 
     #Delete user view/Borrar usuario view (solo admin)
     @view_config(route_name='delete_user', renderer='../templates/admin.jinja2')
@@ -114,7 +115,7 @@ class Views:
 
         ip_client = self.request.client_addr
         print(ip_client)
-        g, geloc = greeting(ip_client)
+        g, geloc = self.greeting()
         print(g, geloc)
         if self.request.user.role == 'admin':
             self.request.session.flash(f'{"Hello " if g == None else g} You are the Administrator', queue='', allow_duplicate=False)
@@ -130,7 +131,7 @@ class Views:
         username = self.request.matchdict['user']
         next_url = self.request.route_url('profile', user=username)
 
-        # if no user no func/si no hay usuario no hay funcion
+        # if no user no func/si no hay usuario no hayget_users funcion
         # User validation/validacion de usuario
         if self.out_or_stay(username=username): return HTTPFound(location='/error')
 
@@ -178,7 +179,17 @@ class Views:
         if 'form.submitted' in self.request.params:
             post_title = self.request.params['post_title']
             post_text = self.request.params['post_text']
-            post = BlogPosts(title=post_title,text=post_text,user_id=user.id)
+            if self.request.localization is not None:
+                city_name = self.request.localization.city_name
+                province_name = self.request.localization.province_name
+                country_name = self.request.localization.country_name
+                ip = self.request.localization.ip
+
+                post = BlogPosts(title=post_title,text=post_text,user_id=user.id,
+                                 city_name=city_name,province_name=province_name,country_name=country_name,ip=ip)
+            else:
+                post = BlogPosts(title=post_title, text=post_text, user_id=user.id,
+                                 city_name=None, province_name=None, country_name=None, ip=None)
             self.db.add(post)
             self.request.session.flash(f'User {user.name} has posted a new post', queue='', allow_duplicate=True)
             return HTTPFound(location=next_url)
