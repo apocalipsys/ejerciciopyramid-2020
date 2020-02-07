@@ -2,7 +2,7 @@ Log users/admin Pyramid webApp
 =========
 Users/passwords: admin/admin, homer/homer, bart/bart, marge/marge, lisa/lisa, maggie/maggie
 
-**Web app hecha con python y el framework pyramid**
+**Web app hecha con python y el framework Pyramid**
 
 - El usuario con rol "admin" se puede loguear, cambiar de rol a los demas usuarios y borrarlos. Postear, borrar sus posts, borrar posts de usuarios. Tambien puede cambiar su foto de perfil.
 
@@ -10,7 +10,7 @@ Users/passwords: admin/admin, homer/homer, bart/bart, marge/marge, lisa/lisa, ma
 Los usuarios nuevos se pueden registrar como rol de invitado "guest" y pueden hacer lo mismo que los demas roles excepto lo que puede hacer el admin.
 Todos los roles pueden ver los posts de todos.
 
-**CARACTERISTICAS NUEVAS 03/02/2020***
+**CARACTERISTICAS NUEVAS 03/02/2020**
 - El administrador puede asignar tareas medidas por tiempo a los usuarios
 - Los usuarios pueden iniciarlas, pausarlas y finalizarlas.
 - Existe un intervalo del tiempo trabajado que se va acumulando a medida se vaya activando y reanudando la tarea.
@@ -19,8 +19,19 @@ Todos los roles pueden ver los posts de todos.
 - Dos juegos asi como para molestar, un ahorcado muy sencillo y adivinar un numero ultra sencillo.
 - Los juegos suman puntaje al usuario.
 
+**07/02/2020**
+- El archivo json_api.py es para usar con postman, contiene metodos http para borrar y agregar usuarios asi como listarlos y otras cosas mas.
+- Tiene un mejor saludo, localizado y ambientado a tu contexto.
 
-***author: Martin Vargas***
+
+***Developer: Martin Vargas***
+
+![alt test](ejerciciokenwin/static/demo.png)
+
+***DEPLOY DEMO***
+
+http://userportal2020.herokuapp.com
+---
 
 Español:
 ---
