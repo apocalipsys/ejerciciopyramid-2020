@@ -21,12 +21,14 @@ import requests
 #Greeting function time adecuate
 #Funcion para saludar adecuada al horiario
 def greeting(ip_client):
-    try:
-        ip = requests.get('https://api.ipify.org').text
-    except:
-        ip = ip_client
+    #try:
+        #ip = requests.get('https://api.ipify.org').text
+
+    #except:
+    #    ip = ip_client
 
     try:
+        ip = ip_client
         geloc = Localizacion(ip)
         timezone = pytz.timezone(geloc.tz)
         time_now = datetime.now()
