@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e5cdbd69-e3be-4a5f-ab47-b93493bd970b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ejerciciokenwin/views/json_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/ejerciciokenwin/views/json_api.py" afterDir="false" />
-    </list>
+    <list default="true" id="e5cdbd69-e3be-4a5f-ab47-b93493bd970b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -350,12 +348,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49822694" visible="true" weight="0.20886075" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49822694" visible="true" weight="0.20886075" />
       <window_info id="Structure" order="2" sideWeight="0.50177306" side_tool="true" weight="0.25527427" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49893162" visible="true" weight="0.42594594" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.49893162" visible="true" weight="0.42594594" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50106835" side_tool="true" weight="0.32864866" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" />
