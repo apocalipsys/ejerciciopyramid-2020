@@ -78,6 +78,8 @@
       {% for post in posts %}
       <dl>
           <dt>Title: {{post.title}} | Date: {{post.date}}</dt>
+          <dt>City: {{post.city_name}} | Province: {{post.province_name}} | Country: {{post.country_name}}</dt>
+
               <dd>{{post.text}}</dd>
       </dl>
         <a class="btn btn-outline-primary" href="{{request.route_url('delete_post', post_id=post.id)}}" role="button">Delete</a>
