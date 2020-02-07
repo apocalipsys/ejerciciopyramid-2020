@@ -244,7 +244,22 @@ class Views:
         if 'form.submitted' in self.request.params:
             post_title = self.request.params['post_title']
             post_text = self.request.params['post_text']
-            self.db.query(BlogPosts).filter_by(id=post.id).update({BlogPosts.title: post_title, BlogPosts.text: post_text, BlogPosts.date:datetime.utcnow()}, synchronize_session=False)
+            if self.request.localization is not None:
+                city_name = self.request.localization.city_name
+                province_name = self.request.localization.province_name
+                country_name = self.request.localization.country_name
+                ip = self.request.localization.ip
+
+                self.db.query(BlogPosts).filter_by(id=post.id).update({BlogPosts.title: post_title,
+                                                                   BlogPosts.text: post_text, BlogPosts.date:datetime.utcnow(),
+                                                                   BlogPosts.city_name:city_name, BlogPosts.country_name:country_name,
+                                                                   BlogPosts.province_name:province_name, BlogPosts.ip:ip},
+                                                                  synchronize_session=False)
+            else:
+                self.db.query(BlogPosts).filter_by(id=post.id).update({BlogPosts.title: post_title,
+                                                                       BlogPosts.text: post_text,
+                                                                       BlogPosts.date: datetime.utcnow()},
+                                                                      synchronize_session=False)
             self.request.session.flash(f'User {user} has edited {post.title} post', queue='', allow_duplicate=True)
             return HTTPFound(location=next_url)
 
