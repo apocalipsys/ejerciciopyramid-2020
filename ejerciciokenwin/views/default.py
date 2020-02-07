@@ -20,20 +20,24 @@ import requests
 
 #Greeting function time adecuate
 #Funcion para saludar adecuada al horiario
-def greeting(ip):
-    if ip == '127.0.0.1':
-        try:
-            ip = requests.get('https://api.ipify.org').text
-            geloc = Localizacion(ip)
-            timezone = pytz.timezone(geloc.tz)
-            time_now = datetime.now()
-            com = time_now.astimezone(timezone)
-            h = com.hour
-            dayparts = {12: 'Good morning', 18: 'Good afternoon', 24: 'Good night'}
-            greet = [v for k, v in dayparts.items() if h < k][0]
-            return greet, geloc
-        except:
-            return None, None
+def greeting(ip_client):
+    try:
+        ip = requests.get('https://api.ipify.org').text
+    except:
+        ip = ip_client
+
+    try:
+        geloc = Localizacion(ip)
+        timezone = pytz.timezone(geloc.tz)
+        time_now = datetime.now()
+        com = time_now.astimezone(timezone)
+        h = com.hour
+        dayparts = {12: 'Good morning', 18: 'Good afternoon', 24: 'Good night'}
+        greet = [v for k, v in dayparts.items() if h < k][0]
+        return greet, geloc
+    except:
+        return None, None
+
 
 #Views class/ Clase vistas
 @view_defaults(renderer='../templates/home.jinja2')
@@ -116,7 +120,7 @@ class Views:
         ip_client = self.request.client_addr
         print(ip_client)
         g, geloc = greeting(ip_client)
-        #loc = Localizacion(ip_client)
+        print(g, geloc)
         if self.request.user.role == 'admin':
             self.request.session.flash(f'{"Hello " if g == None else g} You are the Administrator', queue='', allow_duplicate=False)
             return HTTPFound(location='/admin')
