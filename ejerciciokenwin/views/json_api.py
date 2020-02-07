@@ -1,14 +1,10 @@
+#Este archivo contiene un poco de metodos delete, post, get y algo de cookies
+#This file has a little of http methods and cookies.
+
 from pyramid.httpexceptions import HTTPFound
 from pyramid.view import view_config, view_defaults
 from ..models import User, BlogPosts, Score, Tasks
-from datetime import datetime
-from ..security import get_user
-import base64
-import os
-import shutil
-from ejerciciokenwin import static_dir
 import json
-from pyramid import response
 from http import cookies
 
 #Views class/ Clase vistas

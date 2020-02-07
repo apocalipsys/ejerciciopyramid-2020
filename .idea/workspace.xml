@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5cdbd69-e3be-4a5f-ab47-b93493bd970b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ejerciciokenwin/views/default.py" beforeDir="false" afterPath="$PROJECT_DIR$/ejerciciokenwin/views/default.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ejerciciokenwin/views/json_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/ejerciciokenwin/views/json_api.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,11 +21,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ejerciciokenwin/views/json_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
+            <state>
+              <caret lean-forward="true" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
               </folding>
@@ -33,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ejerciciokenwin/views/default.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="28" column="35" lean-forward="true" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+            <state relative-caret-position="-4255">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
               <folding>
                 <element signature="e#493#537#0" expanded="true" />
               </folding>
@@ -178,7 +178,6 @@
         <option value="$PROJECT_DIR$/ejerciciokenwin/views/task_scheduler.py" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/templates/user_task_assign.jinja2" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/routes.py" />
-        <option value="$PROJECT_DIR$/ejerciciokenwin/views/json_api.py" />
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/static/style.css" />
@@ -186,6 +185,7 @@
         <option value="$PROJECT_DIR$/ejerciciokenwin/views/geoloc.py" />
         <option value="$PROJECT_DIR$/development.ini" />
         <option value="$PROJECT_DIR$/ejerciciokenwin/views/default.py" />
+        <option value="$PROJECT_DIR$/ejerciciokenwin/views/json_api.py" />
       </list>
     </option>
   </component>
@@ -353,9 +353,9 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49822694" visible="true" weight="0.20886075" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49822694" visible="true" weight="0.20886075" />
       <window_info id="Structure" order="2" sideWeight="0.50177306" side_tool="true" weight="0.25527427" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.49893162" visible="true" weight="0.36864865" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49893162" visible="true" weight="0.42594594" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50106835" side_tool="true" weight="0.32864866" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" />
@@ -658,16 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ejerciciokenwin/views/json_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ejerciciokenwin/views/geoloc.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -684,10 +674,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ejerciciokenwin/views/default.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="28" column="35" lean-forward="true" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+        <state relative-caret-position="-4255">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
           <folding>
             <element signature="e#493#537#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ejerciciokenwin/views/json_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
