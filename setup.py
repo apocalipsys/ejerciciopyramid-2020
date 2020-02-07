@@ -17,6 +17,7 @@ requires = [
     'plaster_pastedeploy',
     'bcrypt',
     'geoip2',
+    'pytz',
     'requests',
     'werkzeug',
     'docutils',
