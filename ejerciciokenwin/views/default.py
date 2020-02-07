@@ -114,6 +114,7 @@ class Views:
         posts = self.db.query(BlogPosts).filter_by(user_id=self.request.user.id).all()
 
         ip_client = self.request.client_addr
+        print(ip_client)
         g, geloc = greeting(ip_client)
         #loc = Localizacion(ip_client)
         if self.request.user.role == 'admin':
