@@ -14,13 +14,23 @@ import base64
 import os
 import shutil
 from ejerciciokenwin import static_dir
-
+from .geoloc import Localizacion
+import pytz
+import requests
 #Greeting function time adecuate
 #Funcion para saludar adecuada al horiario
-def greeting():
-    h = datetime.today().hour
+
+
+def greeting(ip):
+    geloc = Localizacion(ip)
+    timezone = pytz.timezone(geloc.tz)
+    time_now = datetime.now()
+    com = time_now.astimezone(timezone)
+    h = com.hour
+    #h = datetime.today().hour
     dayparts = {12:'Good morning',18:'Good afternoon',24:'Good night'}
     greet =[v for k,v in dayparts.items() if h < k][0]
+    print(h, geloc.tz, greet)
     return greet
 
 #Views class/ Clase vistas
@@ -101,7 +111,9 @@ class Views:
 
         posts = self.db.query(BlogPosts).filter_by(user_id=self.request.user.id).all()
         print(posts, self.request.user.id)
-        g = greeting()
+        ip_client = self.request.client_addr
+        #ip_client = requests.get('https://api.ipify.org').text
+        g = greeting(ip_client)
         if self.request.user.role == 'admin':
             self.request.session.flash(f'{g} You are the Administrator', queue='', allow_duplicate=False)
             return HTTPFound(location='/admin')

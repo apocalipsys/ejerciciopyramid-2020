@@ -16,6 +16,8 @@ with open(os.path.join(here, 'CHANGES.txt')) as f:
 requires = [
     'plaster_pastedeploy',
     'bcrypt',
+    'geoip2',
+    'requests',
     'werkzeug',
     'docutils',
     'pyramid',

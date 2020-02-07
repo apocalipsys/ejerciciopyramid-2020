@@ -55,14 +55,14 @@ class Views:
     @view_config(request_method=['GET'], route_name='getcookie', renderer='json')
     def getcookie(self):
         c = cookies.SimpleCookie()
-        user = self.request.user.name
+        #user = self.request.user.name
         ip_remote = self.request.remote_addr
         ip_client = self.request.client_addr
-        c['user'] = user
+        #c['user'] = user
         c['clientip'] = ip_client
         c['remoteip'] = ip_remote
 
 
-        return {'user': user, 'ip remote': ip_remote, 'ip client': ip_client, 'cookie':c.output()}
+        return {'ip remote': ip_remote, 'ip client': ip_client, 'cookie':c.output()}
 
 
