@@ -16,17 +16,10 @@ import shutil
 from ejerciciokenwin import static_dir
 from .geoloc import Localizacion
 import pytz
-import requests
 
 #Greeting function time adecuate
 #Funcion para saludar adecuada al horiario
 def greeting(ip_client):
-    #try:
-        #ip = requests.get('https://api.ipify.org').text
-
-    #except:
-    #    ip = ip_client
-
     try:
         ip = ip_client
         geloc = Localizacion(ip)
